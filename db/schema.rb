@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_12_09_170218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.integer "initial_price"
+    t.integer "discount"
+    t.integer "min_number"
+    t.integer "max_number"
+    t.string "category"
+    t.integer "duration_in_minutes"
+    t.integer "deadline_in_days"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
