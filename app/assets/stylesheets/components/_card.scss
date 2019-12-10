@@ -4,8 +4,14 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
-  margin: 15px;
+  margin-top: 15px;
+}
+
+.card-product-infos {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .activity-card img {
@@ -18,10 +24,17 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-bottom: 60px;
+  color: black;
+  text-decoration: none;
+}
+
+.activity-card h5 {
+  color: #FD894A;
 }
 
 .activity-card p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -30,4 +43,12 @@
 
 .activity-card .card-product-infos {
   padding: 16px;
+  text-decoration: none;
 }
+
+.activity-cards a {
+  text-decoration: none;
+}
+
+
+

@@ -1,24 +1,28 @@
-<h4 class="my-4 mx-4" style="color: #FD894A"><%= pluralize @activities.size, "Activity" %></h4>
+<div class="container">
+  <a class="btn btn-ghost" href="#">Categories</a>
+  <a class="btn btn-ghost" href="#">Dates</a>
+  <a class="btn btn-ghost" href="#">Price</a>
+  <a class="btn btn-ghost" href="#">Participants</a>
 
-<div class="index-cards">
-  <!-- Div of all the cards in grid form -->
+<h4 style="color: #FD894A"><%= pluralize @activities.size, "Activity" %> in ... </h4>
 
-  <div class="activity-cards">
+    <!-- Div of all the cards in grid form -->
 
-    <%  @activities.each do |activity| %>
-    <a class="link-none" href="<%= activity_path(activity) %>">
-    <div class="activity-card">
-      <div class="div-image">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      </div>
-
-      <div class="card-product-infos">
-        <h3><%=activity.title.truncate(20)%></h3>
-        <p><%=activity.address %></p>
-        <h5 class="price"> <%= activity.initial_price %>€ </h5>
-        <h5 class="price"> <%= activity.discount %>€ </h5>
-      </div>
-    </div></a>
-    <% end %>
-  </div>
+    <div class="activity-cards">
+      <%  @activities.each do |activity| %>
+      <a class="link-none" href="<%= activity_path(activity) %>">
+      <div class="activity-card">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <div>
+            <h3><%=activity.title.truncate(20)%></h3>
+          </div>
+          <div class="activity-pricing">
+            <h5> <%= activity.initial_price %>€ </h5>
+            <h5> <%= activity.discount %>€ </h5>
+          </div>
+        </div>
+      </div></a>
+      <% end %>
+    </div>
 </div>
