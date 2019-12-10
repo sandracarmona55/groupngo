@@ -1,0 +1,97 @@
+body {
+  background-color: white;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin: 0;
+}
+
+#title-banner {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 31px;
+  font-weight: bold;
+  margin-top: -110px;
+}
+
+.titles {
+font-size: 20px;
+margin-top: 15px;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+strong {
+  color: #FD894A;
+}
+
+.form-relative {
+  position: relative;
+}
+
+.form-control {
+  margin-top: 10px;
+  width: 250px;
+  border-radius: 4px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 28px;
+}
+
+.fa-map-marker-alt {
+  color: #FD894A;
+  position: absolute;
+  left: 10px;
+  bottom: 11px;
+}
+
+// .categories-all p {
+//   vertical-align: bottom;
+// }
+
+.card-categories {
+  height: 110px;
+  // justify-content: center;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: white;
+  color: grey;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid #F0F0F0;
+}
+
+.categories-all a {
+  text-decoration: none;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  padding-top: 5px;
+}
+
+.relaxation {
+  width: 80px;
+  padding-top: -3px;
+}
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
+
+
+
