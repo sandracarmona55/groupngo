@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Activity.delete_all
 
 Activity.create(title: "Fast Track Sagrada Familia Guided Tour",description: "Exploring La Sagrada Familia without a guide means you may miss out on the UNESCO World Heritage Site's hidden details and secret symbols. Make the most of Antoni Gaudí’s masterpiece and beat lines often in excess of three hours on a skip-the-line tour. A choice of entry times allows you to be flexible with your vacation schedule: Opt for the earliest time slot for a less-crowded experience at the Barcelona icon.",address: "Carrer de Sardenya, 311, Barcelona",initial_price: 39,discount: 30,min_number: 10,max_number: 15,category:"Culture",duration: 2,deadline: 7,photo_url:"https://images.unsplash.com/photo-1569660991241-748962701d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
@@ -17,7 +18,7 @@ Activity.create(
   discount: 20,
   min_number: 15,
   max_number: 20,
-  category:"Culture",
+  category:"culture",
   duration: 1,
   deadline: 7,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/af/d9/eb.jpg")
@@ -30,7 +31,7 @@ Activity.create(
   discount: 25,
   min_number: 10,
   max_number: 15,
-  category:"Culture",
+  category:"culture",
   duration: 3,
   deadline: 7,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/99/93/88.jpg")
@@ -43,7 +44,7 @@ Activity.create(
   discount: 15,
   min_number: 15,
   max_number: 20,
-  category:"Gastronomy",
+  category:"gastronomy",
   duration: 10,
   deadline: 7,
   photo_url:"https://www.barcelona-tourist-guide.com/images/ext/attractions/montserrat/L550/montserrat-barcelona-24.jpg")
@@ -56,7 +57,7 @@ Activity.create(
   discount: 20,
   min_number: 8,
   max_number: 12,
-  category:"Gastronomy",
+  category:"gastronomy",
   duration: 3,
   deadline: 7,
   photo_url:"https://travelbar.com/wp-content/uploads/2017/05/paella.jpg")
@@ -69,7 +70,7 @@ Activity.create(
   discount: 25,
   min_number: 8,
   max_number: 12,
-  category:"Gastronomy",
+  category:"gastronomy",
   duration: 3,
   deadline: 3,
   photo_url:"https://cdn2.veltra.com/ptr/20170915103155_1948840924_10339_0.jpg?imwidth=480&impolicy=custom")
@@ -82,7 +83,7 @@ Activity.create(
   discount: 20,
   min_number: 10,
   max_number: 15,
-  category:"Leisure",
+  category:"leisure",
   duration: 2,
   deadline: 4,
   photo_url:"https://www.barcelona-tourist-guide.com/images/int/entertainment/flamenco-tablao-cordobes/L550/flamenco-tablao-cordobes-5341.jpg")
@@ -95,7 +96,7 @@ Activity.create(
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"Sports",
+  category:"sports",
   duration: 4,
   deadline: 3,
   photo_url:"https://cdn.getyourguide.com/img/tour_img-307231-146.jpg")
@@ -108,7 +109,7 @@ Activity.create(
   discount: 15,
   min_number: 15,
   max_number: 20,
-  category:"Sports",
+  category:"sports",
   duration: 2,
   deadline: 5,
   photo_url:"https://cdn.getyourguide.com/img/location_img-2698-3284241070-148.jpg")
@@ -121,7 +122,7 @@ Activity.create(
   discount: 10,
   min_number: 10,
   max_number: 15,
-  category:"Concerts",
+  category:"concerts",
   duration: 2,
   deadline: 2,
   photo_url:"https://www.palaumusica.cat/images/220801/image_gallery_close_up.jpg")
@@ -134,7 +135,7 @@ Activity.create(
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"Concerts",
+  category:"concerts",
   duration: 3,
   deadline: 5,
   photo_url:"https://img.grouponcdn.com/pwa_test/3Fx4UTtGNWCgfQkQLATrmoSucHMt/3F-669x446/v1/c700x420.jpg")
@@ -147,7 +148,7 @@ Activity.create(
   discount: 15,
   min_number: 12,
   max_number: 17,
-  category:"Concerts",
+  category:"concerts",
   duration: 1,
   deadline: 3,
   photo_url:"https://barcelonanavigator.com/wp-content/uploads/2019/10/BIGIF6_1-1-MB.jpg")
@@ -160,7 +161,7 @@ Activity.create(
   discount: 25,
   min_number: 10,
   max_number: 15,
-  category:"Concerts",
+  category:"concerts",
   duration: 2,
   deadline: 6,
   photo_url:"https://www.barcelona-life.com/wp-content/uploads/2018/07/barcelona-flamenco-show-and-dinner.jpg")
@@ -173,7 +174,7 @@ Activity.create(
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"Leisure",
+  category:"leisure",
   duration: 4,
   deadline: 7,
   photo_url:"https://cdn02.visitbarcelona.com/files/5531-4069-imagenCAT/BarcelonaPortTour-T24-b_O.jpg")
@@ -186,7 +187,7 @@ Activity.create(
   discount: 10,
   min_number: 5,
   max_number: 10,
-  category:"Sports",
+  category:"sports",
   duration: 5,
   deadline: 7,
   photo_url:"https://www.barcelonacyclingcenter.com/wp-content/uploads/2015/11/IMG_4896-1-870x580.jpg")
@@ -199,7 +200,7 @@ Activity.create(
   discount: 10,
   min_number: 5,
   max_number: 10,
-  category:"Sports",
+  category:"sports",
   duration: 2,
   deadline: 2,
   photo_url:"https://gorunningtours.com/wp-content/uploads/2019/05/MUST_SEE_11KM_960x640-3.jpg")
@@ -213,7 +214,7 @@ Yoga mats provided.",
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"Relaxation",
+  category:"relaxation",
   duration: 1,
   deadline: 3,
   photo_url:"https://media-cdn.tripadvisor.com/media/photo-s/18/3b/5f/82/sunrise-beach-yoga.jpg")
@@ -226,7 +227,7 @@ Activity.create(
   discount: 10,
   min_number: 10,
   max_number: 15,
-  category:"Relaxation",
+  category:"relaxation",
   duration: 2,
   deadline: 3,
   photo_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqn_7UP3V4aqpNxmsORJNCo8zDT_wke9IkLQEp237kDJZTJ5Jx_A&s")
@@ -239,7 +240,7 @@ Activity.create(
   discount: 20,
   min_number: 5,
   max_number: 10,
-  category:"Relaxation",
+  category:"relaxation",
   duration: 2,
   deadline: 3,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-360x240/09/94/93/66.jpg")
