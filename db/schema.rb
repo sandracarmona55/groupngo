@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_113227) do
     t.integer "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
   end
 
   create_table "bookings", force: :cascade do |t|
