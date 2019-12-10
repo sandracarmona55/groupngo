@@ -5,18 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Activity.create(
-  title: "Fast Track Sagrada Familia Guided Tour",
-  description: "Exploring La Sagrada Familia without a guide means you may miss out on the UNESCO World Heritage Site's hidden details and secret symbols. Make the most of Antoni Gaudí’s masterpiece and beat lines often in excess of three hours on a skip-the-line tour. A choice of entry times allows you to be flexible with your vacation schedule: Opt for the earliest time slot for a less-crowded experience at the Barcelona icon.",
-  address: "Carrer de Sardenya, 311, Barcelona",
-  initial_price: 39,
-  discount: 30,
-  min_number: 10,
-  max_number: 15,
-  category:"Culture",
-  duration: 2,
-  deadline: 7,
-  photo_url:"https://images.unsplash.com/photo-1569660991241-748962701d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+Activity.delete_all
+
+Activity.create(title: "Fast Track Sagrada Familia Guided Tour",description: "Exploring La Sagrada Familia without a guide means you may miss out on the UNESCO World Heritage Site's hidden details and secret symbols. Make the most of Antoni Gaudí’s masterpiece and beat lines often in excess of three hours on a skip-the-line tour. A choice of entry times allows you to be flexible with your vacation schedule: Opt for the earliest time slot for a less-crowded experience at the Barcelona icon.",address: "Carrer de Sardenya, 311, Barcelona",initial_price: 39,discount: 30,min_number: 10,max_number: 15,category:"Culture",duration: 2,deadline: 7,photo_url:"https://images.unsplash.com/photo-1569660991241-748962701d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 Activity.create(
   title: "Gaudi's Casa Batlló Admission Ticket with Smart Guide",

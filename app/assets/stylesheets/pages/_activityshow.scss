@@ -1,0 +1,72 @@
+.card-activity-title {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+}
+
+.activity-btns {
+
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  // border-bottom: solid 1px #FD894A;
+  .activity-btn {
+    margin: 0 5px;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    h4 {
+    font-size: 16px;
+    font-weight: bold;
+    }
+  }
+}
+.active {
+  border-bottom: 2px solid #FD894A;
+}
+
+.show-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  padding-bottom: 2px;
+}
+
+.about  p {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  .review-content {
+    flex-grow: 1;
+    padding-left: 12px;
+  }
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  .avatar-review {
+    width: 56px;
+    border-radius: 50%;
+  }
+}
+
