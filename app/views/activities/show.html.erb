@@ -1,2 +1,56 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<div class="card-activity-title" style="background-image: url(<%= @activity.photo_url %>)"></div>
+
+<div class="container">
+  <div class="activity-btns">
+    <div class="activity-btn tab-link active">
+      <h4>Description</h4>
+    </div>
+    <div class="activity-btn passive">
+      <h4>Join a group!</h4>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="show-title">
+    <%= @activity.title %>
+  </div>
+
+  <br>
+
+  <div class="about">
+    <h3 class="show-subtitle">About</h3>
+    <p> <%= @activity.description %> </p>
+  </div>
+
+  <br>
+
+  <div class="reviews">
+    <h3 class="show-subtitle">Reviews</h3>
+    <div class="review">
+      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+      <div class="review-content">
+        <p><em>I really recommend this activity, we had a really good time</em></p>
+      </div>
+    </div>
+    <div class="review">
+      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+      <div class="review-content">
+        <p>I really recommend this activity, we had a really good time</p>
+      </div>
+    </div>
+    <div class="review">
+      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+      <div class="review-content">
+        <p>I really recommend this activity, we had a really good time</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="map">
+
+  </div>
+
+</div>
