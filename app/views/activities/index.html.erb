@@ -12,10 +12,10 @@
       <%  @activities.each do |activity| %>
       <a class="link-none" href="<%= activity_path(activity) %>">
       <div class="activity-card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <img src= <%=activity.photo_url %> />
         <div class="card-product-infos">
           <div>
-            <h3><%=activity.title.truncate(20)%></h3>
+            <h3><%=activity.title%></h3>
           </div>
           <div class="activity-pricing">
             <h5> <%= activity.initial_price %>€ </h5>
