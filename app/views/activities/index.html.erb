@@ -6,7 +6,7 @@
     <a class="btn btn-ghost" href="#">Participants</a>
   </div> -->
 
-<h4 style="color: #FD894A"><%= pluralize @activities.size, "Activity" %> in ... </h4>
+<h4 class="results-title"><%= pluralize @activities.size, "Activity" %> in <%= params[:query] %> </h4>
 
     <!-- Div of all the cards in grid form -->
 

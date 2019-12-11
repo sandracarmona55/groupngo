@@ -1,17 +1,27 @@
- a {
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
     text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
   }
+}
+
+.results-title {
+  color: #FD894A;
+  font-size: 20px;
+}
 
 .activity-card {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   margin-top: 15px;
+  border: solid 1px #e2e0e0;
   img {
     height: 100%;
     width: 140px;

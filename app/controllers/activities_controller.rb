@@ -1,6 +1,12 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    if params[:query].present?
+      @activities = Activity.geocoded.where("address ILIKE ?", "%#{params[:query]}%")
+    elsif params[:category].present?
+      @activities = Activity.where(category:params[:category])
+    else
+      @activities = Activity.geocoded
+    end
   end
 
   def show
