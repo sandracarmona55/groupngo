@@ -2,11 +2,11 @@
     <div class="container">
       <h1 id="title-banner">Come together,  <br> <strong>pay less</strong></h1>
       <%= form_tag activities_path, method: :get do %>
-        <p class='d-flex'> <%= text_field_tag :query,
+        <p class='d-flex form-input'> <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Choose a location"
-        %> <% submit_tag %>
+        %> <i class="fas fa-map-marker-alt"></i> <% submit_tag %>
         </p>
       <% end %>
       <!-- <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -19,7 +19,6 @@
   </div>
 
 <div class="container">
-  <h2 class="titles">Categories</h2>
 
   <div class="row categories-all">
     <div class="col-4 p-1">

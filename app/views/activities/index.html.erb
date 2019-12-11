@@ -5,9 +5,13 @@
     <a class="btn btn-ghost" href="#">Price</a>
     <a class="btn btn-ghost" href="#">Participants</a>
   </div> -->
-
-<h4 class="results-title"><%= pluralize @activities.size, "Activity" %> in <%= params[:query] %> </h4>
-
+<% if params[:query].present? %>
+  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
+<% elsif params[:category].present? %>
+  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> for <%= params[:category] %></h4>
+<% else %>
+  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> </h4>
+<% end %>
     <!-- Div of all the cards in grid form -->
 
   <div class="activity-cards">
