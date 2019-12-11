@@ -62,4 +62,17 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
   </div>
+
+  <div>
+
+    <% @groups.each do |day, group| %>
+      <p><%= group.first.date.strftime("%b %d")  %> </p>
+
+      <% group.each do |g| %>
+        <p><%= g.date.strftime("%H:%M") %> </p>
+      <% end %>
+    <% end %>
+
+  </div>
+
 </div>
