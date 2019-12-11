@@ -26,7 +26,7 @@ margin-top: 15px;
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -34,18 +34,20 @@ strong {
   color: #FD894A;
 }
 
-.form-relative {
-  position: relative;
+.form-input {
+  position: relative
 }
 
 .form-control {
+  position: relative;
   margin-top: 10px;
   width: 250px;
   border-radius: 4px;
   border: none;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 28px;
+  padding-left: 30px;
+  background-color: white;
 }
 
 .fa-map-marker-alt {
