@@ -1,28 +1,29 @@
 <div class="container">
-  <a class="btn btn-ghost" href="#">Categories</a>
-  <a class="btn btn-ghost" href="#">Dates</a>
-  <a class="btn btn-ghost" href="#">Price</a>
-  <a class="btn btn-ghost" href="#">Participants</a>
+<!--   <div class="filter-btn">
+    <a class="btn btn-ghost" href="#">Categories</a>
+    <a class="btn btn-ghost" href="#">Dates</a>
+    <a class="btn btn-ghost" href="#">Price</a>
+    <a class="btn btn-ghost" href="#">Participants</a>
+  </div> -->
 
 <h4 style="color: #FD894A"><%= pluralize @activities.size, "Activity" %> in ... </h4>
 
     <!-- Div of all the cards in grid form -->
 
-    <div class="activity-cards">
-      <%  @activities.each do |activity| %>
+  <div class="activity-cards">
+    <%  @activities.each do |activity| %>
       <a class="link-none" href="<%= activity_path(activity) %>">
-      <div class="activity-card">
-          <img src= <%=activity.photo_url %> />
-        <div class="card-product-infos">
-          <div>
-            <h3><%=activity.title%></h3>
-          </div>
-          <div class="activity-pricing">
-            <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
-            <h5> <%= activity.discount %>€ </h5>
+        <div class="activity-card">
+            <img src= <%=activity.photo_url %> />
+          <div class="activity-infos">
+            <h3 class="activity-title"><%=activity.title%></h3>
+            <div class="activity-pricing">
+              <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
+              <h5 class="new-price"> <%= (activity.calcul_discount(activity.initial_price, activity.discount)).round %>€ </h5>
+            </div>
           </div>
         </div>
-      </div></a>
-      <% end %>
-    </div>
+      </a>
+    <% end %>
+  </div>
 </div>
