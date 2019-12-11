@@ -1,10 +1,4 @@
 <div class="container">
-<!--   <div class="filter-btn">
-    <a class="btn btn-ghost" href="#">Categories</a>
-    <a class="btn btn-ghost" href="#">Dates</a>
-    <a class="btn btn-ghost" href="#">Price</a>
-    <a class="btn btn-ghost" href="#">Participants</a>
-  </div> -->
 <% if params[:query].present? %>
   <h4 class="results-title"><%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
 <% elsif params[:category].present? %>
@@ -13,6 +7,31 @@
   <h4 class="results-title"><%= pluralize @activities.size, "activity" %> </h4>
 <% end %>
     <!-- Div of all the cards in grid form -->
+<div class="filter-btn d-flex">
+  <li class="btn btn-ghost">
+    <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+      <p>Categorie</p>
+    </div>
+    <div class="dropdown-menu">
+      <ul> <%= link_to "Sports", activities_path(category:'Sports') %> </ul>
+      <ul> <%= link_to "Relaxation", activities_path(category:'Relaxation') %> </ul>
+      <ul> <%= link_to "Gastronomy", activities_path(category:'Gastronomy') %> </ul>
+      <ul> <%= link_to "Culture", activities_path(category:'Culture') %> </ul>
+      <ul> <%= link_to "Concerts", activities_path(category:'Concerts') %> </ul>
+      <ul> <%= link_to "Leisure", activities_path(category:'Leisure') %> </ul>
+    </div>
+  </li>
+  <li class="btn btn-ghost">
+    <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+      <p>Price</p>
+    </div>
+    <div class="dropdown-menu">
+      <%= form_tag activities_path, params: request.query_parameters, method: :get do %>
+        <%= text_field_tag :price, params[:price], placeholder: "Max price"
+        %><% submit_tag %>
+      <% end %>
+    </div>
+</div>
 
   <div class="activity-cards">
     <%  @activities.each do |activity| %>
@@ -23,7 +42,7 @@
             <h3 class="activity-title"><%=activity.title%></h3>
             <div class="activity-pricing">
               <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
-              <h5 class="new-price"> <%= (activity.calcul_discount(activity.initial_price, activity.discount)).round %>€ </h5>
+              <h5 class="new-price"> <%= activity.price %>€ </h5>
             </div>
           </div>
         </div>
