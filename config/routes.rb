@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :activities, only: [:index, :show]
 
   post '/bookings', to: 'bookings#create', as: :bookings
+  get '/bookings/checkout', to: 'bookings#checkout', as: :checkout
 end
