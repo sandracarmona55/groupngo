@@ -117,9 +117,33 @@ button {
   #time {
     margin-bottom: 0px;
   }
-  #spots {
+}
+#spots {
     font-size: 14px;
     margin-top: 8px;
   }
+
+.time-selected {
+  background-color: #FD894A;
+  color: white;
+}
+
+input {
+  // visibility: hidden;
+}
+
+#time_button {
+  visibility: hidden;
+  font-size: 50px;
+}
+
+.join-group {
+  width: 100%;
+  background-color: #FD894A;
+  color: white;
+  position: sticky;
+  bottom: 10px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
