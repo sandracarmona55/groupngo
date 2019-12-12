@@ -25,11 +25,12 @@ a {
   img {
     height: 100%;
     width: 140px;
-    fit: cover;
+    object-fit: cover;
   }
 
   .activity-infos {
     padding: 16px;
+    width: 100%;
     text-decoration: none;
     position: relative;
   }
