@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
 Activity.delete_all
 
@@ -28,7 +28,7 @@ Activity.create(
   discount: 20,
   min_number: 15,
   max_number: 20,
-  category:"culture",
+  category:"Culture",
   duration: 1,
   deadline: 7,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/af/d9/eb.jpg")
@@ -41,7 +41,7 @@ Activity.create(
   discount: 25,
   min_number: 10,
   max_number: 15,
-  category:"culture",
+  category:"Culture",
   duration: 3,
   deadline: 7,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/99/93/88.jpg")
@@ -54,7 +54,7 @@ Activity.create(
   discount: 15,
   min_number: 15,
   max_number: 20,
-  category:"gastronomy",
+  category:"Gastronomy",
   duration: 10,
   deadline: 7,
   photo_url:"https://www.barcelona-tourist-guide.com/images/ext/attractions/montserrat/L550/montserrat-barcelona-24.jpg")
@@ -67,23 +67,10 @@ Activity.create(
   discount: 20,
   min_number: 8,
   max_number: 12,
-  category:"gastronomy",
+  category:"Gastronomy",
   duration: 3,
   deadline: 7,
   photo_url:"https://travelbar.com/wp-content/uploads/2017/05/paella.jpg")
-
-Activity.create(
-  title: "Tapas and Wine Experience Small-Group Walking Tour",
-  description: "Discover Catalonian and Spanish food traditions in Barcelona on this guided evening or midday wine and tapas walking tour. Explore the city on foot while tasting and sipping, and learn the etiquette, history, and art of sharing small plates. Dive into the local food scene and sample popular fare like Iberian ham and a variety of regional wines. Optionally upgrade for a flamenco show experience.",
-  address: "Plaça de Sant Jaume, 3, 08002 Barcelona, Spain",
-  initial_price: 75,
-  discount: 25,
-  min_number: 8,
-  max_number: 12,
-  category:"gastronomy",
-  duration: 3,
-  deadline: 3,
-  photo_url:"https://cdn2.veltra.com/ptr/20170915103155_1948840924_10339_0.jpg?imwidth=480&impolicy=custom")
 
 Activity.create(
   title: "Flamenco Night at Tablao Cordobes",
@@ -93,20 +80,20 @@ Activity.create(
   discount: 20,
   min_number: 10,
   max_number: 15,
-  category:"leisure",
+  category:"Leisure",
   duration: 2,
   deadline: 4,
   photo_url:"https://www.barcelona-tourist-guide.com/images/int/entertainment/flamenco-tablao-cordobes/L550/flamenco-tablao-cordobes-5341.jpg")
 
 Activity.create(
   title: "Barcelona Half-Day Bike Tour",
-  description: "Zip around Barcelona’s sights by bike—an energizing alternative to pounding the sidewalks or traveling by enclosed bus. This half-day bike tour uses easy-to-ride bikes, follows routes that avoid traffic, and features a local guide for the full lowdown on the sights and city’s culture. The gentle pace, a beach rest break, and child seats on request make it ideal for families and all fitness levels.",
+  description: "Zip around Barcelona’s sights by bike—an energizing alternative to pounding the sidewalks or traveling by enclosed bus. This half-day bike tour uses easy-to-ride bikes, follows routes that avoid traffic, and features a local guide for the full lowdown on the sights and city’s Culture. The gentle pace, a beach rest break, and child seats on request make it ideal for families and all fitness levels.",
   address: "Plaça de Sant Jaume, 3, 08002 Barcelona, Spain",
   initial_price: 28,
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"sports",
+  category:"Sports",
   duration: 4,
   deadline: 3,
   photo_url:"https://cdn.getyourguide.com/img/tour_img-307231-146.jpg")
@@ -119,7 +106,7 @@ Activity.create(
   discount: 15,
   min_number: 15,
   max_number: 20,
-  category:"sports",
+  category:"Sports",
   duration: 2,
   deadline: 5,
   photo_url:"https://cdn.getyourguide.com/img/location_img-2698-3284241070-148.jpg")
@@ -132,20 +119,20 @@ Activity.create(
   discount: 10,
   min_number: 10,
   max_number: 15,
-  category:"concerts",
+  category:"Concerts",
   duration: 2,
   deadline: 2,
   photo_url:"https://www.palaumusica.cat/images/220801/image_gallery_close_up.jpg")
 
 Activity.create(
   title: "Maestros de la Guitarra",
-  description: "Barcelona's most famous Spanish and flamenco guitar shows. Maestros de la Guitarra is the only festival of its kind in the world. Since 2000, it has produced in Barcelona more than 3000 concerts for more than one million music lovers from Spain and from all around the globe.",
+  description: "Barcelona's most famous Spanish and flamenco guitar shows. Maestros de la Guitarra is the only festival of its kind in the world. Since 2000, it has produced in Barcelona more than 3000 Concerts for more than one million music lovers from Spain and from all around the globe.",
   address: "Avinguda Francesc Cambo, 17, 08003 Barcelona, Spain",
   initial_price: 23,
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"concerts",
+  category:"Concerts",
   duration: 3,
   deadline: 5,
   photo_url:"https://img.grouponcdn.com/pwa_test/3Fx4UTtGNWCgfQkQLATrmoSucHMt/3F-669x446/v1/c700x420.jpg")
@@ -158,7 +145,7 @@ Activity.create(
   discount: 15,
   min_number: 12,
   max_number: 17,
-  category:"concerts",
+  category:"Concerts",
   duration: 1,
   deadline: 3,
   photo_url:"https://barcelonanavigator.com/wp-content/uploads/2019/10/BIGIF6_1-1-MB.jpg")
@@ -171,7 +158,7 @@ Activity.create(
   discount: 25,
   min_number: 10,
   max_number: 15,
-  category:"concerts",
+  category:"Concerts",
   duration: 2,
   deadline: 6,
   photo_url:"https://www.barcelona-life.com/wp-content/uploads/2018/07/barcelona-flamenco-show-and-dinner.jpg")
@@ -184,7 +171,7 @@ Activity.create(
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"leisure",
+  category:"Leisure",
   duration: 4,
   deadline: 7,
   photo_url:"https://cdn02.visitbarcelona.com/files/5531-4069-imagenCAT/BarcelonaPortTour-T24-b_O.jpg")
@@ -197,7 +184,7 @@ Activity.create(
   discount: 10,
   min_number: 5,
   max_number: 10,
-  category:"sports",
+  category:"Sports",
   duration: 5,
   deadline: 7,
   photo_url:"https://www.barcelonacyclingcenter.com/wp-content/uploads/2015/11/IMG_4896-1-870x580.jpg")
@@ -210,7 +197,7 @@ Activity.create(
   discount: 10,
   min_number: 5,
   max_number: 10,
-  category:"sports",
+  category:"Sports",
   duration: 2,
   deadline: 2,
   photo_url:"https://gorunningtours.com/wp-content/uploads/2019/05/MUST_SEE_11KM_960x640-3.jpg")
@@ -224,20 +211,20 @@ Yoga mats provided.",
   discount: 15,
   min_number: 10,
   max_number: 15,
-  category:"relaxation",
+  category:"Relaxation",
   duration: 1,
   deadline: 3,
   photo_url:"https://media-cdn.tripadvisor.com/media/photo-s/18/3b/5f/82/sunrise-beach-yoga.jpg")
 
 Activity.create(
   title: "Yoga By The Sea",
-  description: " This yoga class is the perfect way to enjoy some relaxation in the busy city while also taking in the sites of the beautiful seaside. While the sounds of the waves surround you, we will practice a gentle vinyasa flow designed to leave you feeling relaxed and ready to go with a clear mind. ",
+  description: " This yoga class is the perfect way to enjoy some Relaxation in the busy city while also taking in the sites of the beautiful seaside. While the sounds of the waves surround you, we will practice a gentle vinyasa flow designed to leave you feeling relaxed and ready to go with a clear mind. ",
   address: "Playa de La Barceloneta, Paseo Maritimo Barceloneta, 14, 08003 Barcelona Spain",
   initial_price: 15,
   discount: 10,
   min_number: 10,
   max_number: 15,
-  category:"relaxation",
+  category:"Relaxation",
   duration: 2,
   deadline: 3,
   photo_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqn_7UP3V4aqpNxmsORJNCo8zDT_wke9IkLQEp237kDJZTJ5Jx_A&s")
@@ -250,9 +237,102 @@ Activity.create(
   discount: 20,
   min_number: 5,
   max_number: 10,
-  category:"relaxation",
+  category:"Relaxation",
   duration: 2,
   deadline: 3,
   photo_url:"https://media.tacdn.com/media/attractions-splice-spp-360x240/09/94/93/66.jpg")
 
+puts "Activities : "
 puts Activity.count
+
+Group.delete_all
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,19,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,19,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,19,18,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,20,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,20,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,20,18,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,21,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,21,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,21,18,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,22,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,22,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,22,18,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,23,11,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,23,15,30,00), activity_id: 1)
+Group.create(date: DateTime.new(2019,12,23,18,30,00), activity_id: 1)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 2)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 2)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 2)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 3)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 3)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 3)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 4)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 4)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 4)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 5)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 5)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 5)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 6)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 6)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 6)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 7)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 7)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 7)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 8)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 8)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 8)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 9)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 9)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 9)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 10)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 10)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 10)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 11)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 11)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 11)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 12)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 12)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 12)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 13)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 13)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 13)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 14)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 14)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 14)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 15)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 15)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 15)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 16)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 16)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 16)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 17)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 17)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 17)
+
+Group.create(date: DateTime.new(2019,12,18,11,30,00), activity_id: 18)
+Group.create(date: DateTime.new(2019,12,18,15,30,00), activity_id: 18)
+Group.create(date: DateTime.new(2019,12,18,18,30,00), activity_id: 18)
+
+puts "Groups : "
+puts Group.count
