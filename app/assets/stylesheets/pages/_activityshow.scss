@@ -28,12 +28,20 @@
     h4 {
     font-size: 16px;
     font-weight: bold;
+    border: none;
+    background-color: white;
     }
   }
 }
+
+
 .active {
+  border: none;
   border-bottom: 2px solid #FD894A;
+  background-color: white;
 }
+
+
 
 .show-title {
   font-size: 20px;
@@ -68,5 +76,9 @@
     width: 56px;
     border-radius: 50%;
   }
+}
+
+#description {
+  display: none;
 }
 
