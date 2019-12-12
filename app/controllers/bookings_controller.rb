@@ -16,4 +16,9 @@ class BookingsController < ApplicationController
   def checkout
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
   end
+
+  def index
+    @bookings_pending = Booking.where(user_id: current_user.id, paid_status: false)
+    @bookings_paid = Booking.where(user_id: current_user.id, paid_status: false)
+  end
 end
