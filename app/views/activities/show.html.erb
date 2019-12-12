@@ -63,16 +63,26 @@
     ></div>
   </div>
 
-  <div>
 
     <% @groups.each do |day, group| %>
-      <p><%= group.first.date.strftime("%b %d")  %> </p>
+    <div class="day-card">
 
-      <% group.each do |g| %>
-        <p><%= g.date.strftime("%H:%M") %> </p>
-      <% end %>
+      <div class="day">
+        <p><%= group.first.date.strftime("%b")  %> </p>
+        <p id="day-orange"><%= group.first.date.strftime("%d")  %> </p>
+      </div>
+
+      <div class="times">
+        <% group.each do |g| %>
+          <div class="time-each">
+            <p id="time"><%= g.date.strftime("%H:%M") %> </p>
+            <p id="spots"> 3 spots </p>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
     <% end %>
 
-  </div>
 
 </div>
