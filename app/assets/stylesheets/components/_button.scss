@@ -1,12 +1,15 @@
-.btn-ghost {
+.filter-btn {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
   padding: 1px 15px;
-  margin: 10px;
+  margin-right: 5px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
   transition: opacity 0.3s ease;
+  list-style: none;
+  p {
+    margin: 0;
+  }
 }
 
 .btn-ghost:hover {

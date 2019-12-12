@@ -1,14 +1,8 @@
 <div class="container">
-<% if params[:query].present? %>
-  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
-<% elsif params[:category].present? %>
-  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> for <%= params[:category] %></h4>
-<% else %>
-  <h4 class="results-title"><%= pluralize @activities.size, "activity" %> </h4>
-<% end %>
+
     <!-- Div of all the cards in grid form -->
-<div class="filter-btn d-flex">
-  <li class="btn btn-ghost">
+<div class="d-flex">
+  <li class="filter-btn">
     <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
       <p>Categorie</p>
     </div>
@@ -22,7 +16,7 @@
       <ul> <%= link_to "All", activities_path %> </ul>
     </div>
   </li>
-  <li class="btn btn-ghost">
+  <li class="filter-btn">
     <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
       <p>Price</p>
     </div>
@@ -32,6 +26,16 @@
         %><% submit_tag %>
       <% end %>
     </div>
+</div>
+
+<div class="index-title">
+  <% if params[:query].present? %>
+    <h4 class="results-title"><%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
+  <% elsif params[:category].present? %>
+    <h4 class="results-title"><%= pluralize @activities.size, "activity" %> for <%= params[:category] %></h4>
+  <% else %>
+    <h4 class="results-title"><%= pluralize @activities.size, "activity" %> </h4>
+  <% end %>
 </div>
 
   <div class="activity-cards">
