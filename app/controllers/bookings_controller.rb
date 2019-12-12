@@ -7,7 +7,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save
       if @group.bookings.count >= @activity.min_number
-        @group.status = true
+        @group.completed = true
+        @group.save
       end
     redirect_to checkout_path
   end
