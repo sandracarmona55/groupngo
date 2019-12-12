@@ -2,67 +2,66 @@
 
 
   <div class="activity-btns">
-    <div class="activity-btn active">
-      <h4>Description</h4>
-    </div>
-    <div class="activity-btn passive">
-      <h4>Join a group!</h4>
-    </div>
+    <button class="activity-btn active" id="btn-join">Join a group</button>
+    <button class="activity-btn" id="btn-description" >Description</button>
   </div>
 
 <div class="container">
 
   <br>
 
-  <div class="show-title">
-    <%= @activity.title %>
-  </div>
+  <div id="description" class="tabcontent">
+    <div class="show-title">
+      <%= @activity.title %>
+    </div>
 
-  <br>
+    <br>
 
-  <div class="about">
-    <h3 class="show-subtitle">About</h3>
-    <p> <%= @activity.description %> </p>
-  </div>
+    <div class="about">
+      <h3 class="show-subtitle">About</h3>
+      <p> <%= @activity.description %> </p>
+    </div>
 
-  <br>
+    <br>
 
-  <div class="reviews">
-    <h3 class="show-subtitle">Reviews</h3>
-    <div class="review">
-      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-      <div class="review-content">
-        <p><em>I really recommend this activity, we had a really good time</em></p>
+    <div class="reviews">
+      <h3 class="show-subtitle">Reviews</h3>
+      <div class="review">
+        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+        <div class="review-content">
+          <p><em>I really recommend this activity, we had a really good time</em></p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+        <div class="review-content">
+          <p>I really recommend this activity, we had a really good time</p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
+        <div class="review-content">
+          <p>I really recommend this activity, we had a really good time</p>
+        </div>
       </div>
     </div>
-    <div class="review">
-      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-      <div class="review-content">
-        <p>I really recommend this activity, we had a really good time</p>
-      </div>
-    </div>
-    <div class="review">
-      <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-      <div class="review-content">
-        <p>I really recommend this activity, we had a really good time</p>
-      </div>
+
+    <br>
+
+    <div class="map">
+      <h3 class="show-subtitle">Map</h3>
+      <p> <%= @activity.address %> </p>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
   </div>
 
-  <br>
-
-  <div class="map">
-    <h3 class="show-subtitle">Map</h3>
-    <p> <%= @activity.address %> </p>
-    <div
-      id="map"
-      style="width: 100%;
-      height: 300px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-  </div>
-
+  <div id="join" class="tabcontent">
     <%= form_for @booking do |b| %>
       <% @groups.each do |day, group| %>
       <div class="day-card">
