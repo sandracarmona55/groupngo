@@ -1,12 +1,11 @@
 <div class="card-activity-title" style="background-image: url(<%= @activity.photo_url %>)"></div>
 
-
   <div class="activity-btns">
     <button class="activity-btn active" id="btn-join">Join a group</button>
     <button class="activity-btn" id="btn-description" >Description</button>
   </div>
 
-<div class="container">
+  <div class="container">
 
   <br>
 
@@ -20,6 +19,20 @@
     <div class="about">
       <h3 class="show-subtitle">About</h3>
       <p> <%= @activity.description %> </p>
+    </div>
+
+    <br>
+
+    <div class="map">
+      <h3 class="show-subtitle">Map</h3>
+      <p> <%= @activity.address %> </p>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
 
     <br>
@@ -46,24 +59,19 @@
       </div>
     </div>
 
-    <br>
-
-    <div class="map">
-      <h3 class="show-subtitle">Map</h3>
-      <p> <%= @activity.address %> </p>
-      <div
-        id="map"
-        style="width: 100%;
-        height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-    </div>
   </div>
 
   <div id="join" class="tabcontent">
+
+    <div class="show-title">
+      <%= @activity.title %>
+    </div>
+
+    <br>
+
     <%= form_for @booking do |b| %>
       <% @groups.each do |day, group| %>
+
       <div class="day-card">
 
         <div class="day">
@@ -73,6 +81,7 @@
 
         <div class="times">
           <% group.each do |g| %>
+            <div class="time text-center">
             <div class="time-each" data-check-id='<%= g.id %>'>
               <% if g.completed %>
                 <p id="time"><%= g.date.strftime("%H:%M") %> </p>
@@ -80,28 +89,27 @@
                 <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
                 <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
               <% end %>
-
-              <%# b.radio_button :group, g.date.strftime("%H:%M"), id: "time", :checked => true %>
-              <!-- <p id="time"><%= g.date.strftime("%H:%M") %> </p> -->
             </div>
             <p id="spots"> <%= g.spots %> </p>
+            </div>
           <% end %>
         </div>
 
       </div>
       <% end %>
-      <%= b.submit "Join this group!", class:"join-group" %>
+      <%= b.submit "Join this group!", class:"join-group", data: { confirm: "Are you sure?" }, id:"join-btn" %>
     <% end %>
 
         <script>
+          const join = document.getElementById('join-btn');
           const buttons = document.querySelectorAll('.time-each');
           buttons.forEach(btn => {
             btn.addEventListener('click', (event) => {
               event.currentTarget.classList.add('time-selected')
               const target = event.currentTarget.dataset.checkId
               document.getElementById(`check-g-${target}`).click()
+              join.classList.add('join-group-selected')
             })
           })
-
         </script>
 </div>
