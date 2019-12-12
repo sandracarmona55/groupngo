@@ -82,15 +82,19 @@
         <div class="times">
           <% group.each do |g| %>
             <div class="time text-center">
-            <div class="time-each" data-check-id='<%= g.id %>'>
+              <!-- <div class="time-each" data-check-id='<%= g.id %>'> -->
+
               <% if g.completed %>
-                <p id="time"><%= g.date.strftime("%H:%M") %> </p>
+                <div class="time-completed">
+                  <p id="time"><%= g.date.strftime("%H:%M") %> </p>
+                </div>
               <% else %>
-                <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
-                <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
+                <div class="time-each" data-check-id='<%= g.id %>'>
+                  <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
+                  <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
+                </div>
               <% end %>
-            </div>
-            <p id="spots"> <%= g.spots %> </p>
+              <p id="spots"> <%= g.spots %> </p>
             </div>
           <% end %>
         </div>
@@ -105,11 +109,15 @@
           const buttons = document.querySelectorAll('.time-each');
           buttons.forEach(btn => {
             btn.addEventListener('click', (event) => {
+              buttons.forEach(btn => {
+                btn.classList.remove('time-selected')
+              })
               event.currentTarget.classList.add('time-selected')
               const target = event.currentTarget.dataset.checkId
               document.getElementById(`check-g-${target}`).click()
               join.classList.add('join-group-selected')
             })
           })
+
         </script>
 </div>
