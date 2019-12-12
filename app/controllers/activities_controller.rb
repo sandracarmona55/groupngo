@@ -14,5 +14,6 @@ class ActivitiesController < ApplicationController
     # @groups = Group.all.group_by { |group| group.date.day }
 
     @groups = @activity.groups.group_by { |group| group.date.day }
+    @booking = Booking.new
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :activities, only: [:index, :show] do
-    resources :groups, only: [:index]
-  end
+  resources :activities, only: [:index, :show]
+
+  post '/bookings', to: 'bookings#create', as: :bookings
 end

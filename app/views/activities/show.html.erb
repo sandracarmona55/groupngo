@@ -63,26 +63,33 @@
     ></div>
   </div>
 
+    <%= form_for @booking do |b| %>
+      <% @groups.each do |day, group| %>
+      <div class="day-card">
 
-    <% @groups.each do |day, group| %>
-    <div class="day-card">
+        <div class="day">
+          <p><%= group.first.date.strftime("%b")  %> </p>
+          <p id="day-orange"><%= group.first.date.strftime("%d")  %> </p>
+        </div>
 
-      <div class="day">
-        <p><%= group.first.date.strftime("%b")  %> </p>
-        <p id="day-orange"><%= group.first.date.strftime("%d")  %> </p>
+        <div class="times">
+          <% group.each do |g| %>
+            <div class="time-each">
+              <%= b.radio_button :group, g.id, id: "time", :checked => true %>
+              <%= label :group, g.date.strftime("%H:%M") %>
+
+              <%# b.radio_button :group, g.date.strftime("%H:%M"), id: "time", :checked => true %>
+              <!-- <p id="time"><%= g.date.strftime("%H:%M") %> </p> -->
+              <p id="spots"> 3 spots </p>
+            </div>
+          <% end %>
+        </div>
+
       </div>
-
-      <div class="times">
-        <% group.each do |g| %>
-          <div class="time-each">
-            <p id="time"><%= g.date.strftime("%H:%M") %> </p>
-            <p id="spots"> 3 spots </p>
-          </div>
-        <% end %>
-      </div>
-
-    </div>
+      <% end %>
+      <%= b.submit "Join this group", class:"btn-submit ask-booking" %>
     <% end %>
+
 
 
 </div>
