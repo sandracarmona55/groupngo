@@ -106,7 +106,7 @@ button {
   display: flex;
   justify-content: space-evenly;
   flex-grow: 1;
-  margin: auto;
+  margin: 0;
 }
 
 .time-each {
@@ -118,6 +118,17 @@ button {
     margin-bottom: 0px;
   }
 }
+
+.time-completed {
+background-color: #F0F0F0;
+  border-radius: 3px;
+  height: 30px;
+  padding: 0 15px;
+  #time {
+    margin-bottom: 0px;
+  }
+}
+
 #spots {
     font-size: 14px;
     margin-top: 8px;
@@ -125,6 +136,11 @@ button {
 
 .time-selected {
   background-color: #FD894A;
+  color: white;
+}
+
+.disabled {
+  background-color: grey;
   color: white;
 }
 
