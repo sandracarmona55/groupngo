@@ -1,62 +1,66 @@
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.results-title {
+  color: #FD894A;
+  font-size: 20px;
+}
+
 .activity-card {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   margin-top: 15px;
+  border: solid 1px #e2e0e0;
+  img {
+    height: 100%;
+    width: 140px;
+    fit: cover;
+  }
+
+  .activity-infos {
+    padding: 16px;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .activity-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+  }
+
+  .activity-pricing {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    bottom: 2px;
+    right: 10px;
+
+    .initial-price {
+      font-size: 13px;
+      color: grey;
+      text-decoration: line-through;
+      margin-right: 10px;
+    }
+    .new-price {
+      color: #FD894A;
+    }
+  }
 }
 
-.card-product-infos {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.activity-card img {
-  height: 100%;
-  width: 150px;
-  fit: cover;
-}
-
-.activity-card h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  margin-bottom: 60px;
-  color: black;
-  text-decoration: none;
-}
-
-.activity-card h5 {
-  color: #FD894A;
-}
-
-.activity-card p {
-  font-size: 16px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.activity-card .card-product-infos {
-  padding: 16px;
-  text-decoration: none;
-}
-
-.activity-cards a {
-  text-decoration: none;
-}
-
-.activity-pricing {
-  margin-bottom: -15px;
-}
-
-h5.initial-price {
-  color: grey;
-}
 
 
 
