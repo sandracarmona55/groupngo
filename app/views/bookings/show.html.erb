@@ -1,0 +1,28 @@
+<div class="checkout-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @booking.group.activity.photo_url %>);">
+You joined a new group!
+</div>
+<br>
+<div class="container">
+  <div class="group-title">
+    <p>Congrats <% @booking.user.name %>! You booked <strong> <%= @booking.group.activity.title %></strong>!
+    <% if @booking.group.completed == false %></p>
+      <p>The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity! You can check the updates in My Groups.</p>
+    <% else %>
+      The group is full! The activity is confirmed
+    <% end %>
+  </div>
+  <div class="group-description">
+    <div class="infos d-flex">
+      <i class="fas fa-clock"></i>
+      <p><%= @booking.group.date.strftime("%d/%m/%y - %H:%M") %></p>
+    </div>
+    <div class="infos d-flex">
+      <i class="fas fa-map-marker"></i>
+      <p><%= @booking.group.activity.address %></p>
+    </div>
+    <div class="infos d-flex">
+      <i class="fas fa-coins"></i>
+      <p><%= @booking.group.activity.price %>€</p>
+    </div>
+  </div>
+</div>

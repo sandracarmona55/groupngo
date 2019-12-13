@@ -4,23 +4,24 @@
   height: 200px;
   display: flex;
   justify-content: center;
-  align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-top: 30px;
 }
 
 .recap {
-  border: 1px solid grey;
   margin-top: 15px;
   font-family: 'Muli', sans-serif !important;
   padding: 10px;
 
   .recap-line {
+    background: #fff6f2;
     .recap-infos {
       padding: 5px 10px;
+      margin-bottom: 10px;
       .recap-title {
         font-size: 16px;
         font-weight: bold;
@@ -38,4 +39,9 @@
       font-size: 20px;
     }
   }
+}
+
+.checkout-title {
+  color: #FD894A;
+  margin-top: 15px;
 }

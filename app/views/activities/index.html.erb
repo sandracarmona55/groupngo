@@ -7,13 +7,13 @@
       <p>Categories</p>
     </div>
     <div class="dropdown-menu">
-      <ul> <%= link_to "Sports", activities_path(category:'Sports') %> </ul>
-      <ul> <%= link_to "Relaxation", activities_path(category:'Relaxation') %> </ul>
-      <ul> <%= link_to "Gastronomy", activities_path(category:'Gastronomy') %> </ul>
-      <ul> <%= link_to "Culture", activities_path(category:'Culture') %> </ul>
-      <ul> <%= link_to "Concerts", activities_path(category:'Concerts') %> </ul>
-      <ul> <%= link_to "Leisure", activities_path(category:'Leisure') %> </ul>
-      <ul> <%= link_to "All", activities_path %> </ul>
+      <ul> <%= link_to "Sports", activities_path(category:'Sports', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "Relaxation", activities_path(category:'Relaxation', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "Gastronomy", activities_path(category:'Gastronomy', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "Culture", activities_path(category:'Culture', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "Concerts", activities_path(category:'Concerts', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "Leisure", activities_path(category:'Leisure', query:params[:query], price:params[:price]) %> </ul>
+      <ul> <%= link_to "All", activities_path(query:params[:query], price:params[:price]) %> </ul>
     </div>
   </li>
   <li class="filter-btn">
@@ -21,12 +21,18 @@
       <p>Price</p>
     </div>
     <div class="dropdown-menu">
-      <%= form_tag activities_path, params: request.query_parameters, method: :get do %>
+      <%= form_tag activities_path(price:params[:price], query:params[:query], category:params[:category]), method: :get do %>
         <%= text_field_tag :price, params[:price], placeholder: "Max price"
         %><% submit_tag %>
       <% end %>
     </div>
+  </li>
 </div>
+
+<% unless @activities.count == Activity.count %>
+  <p> <%= link_to "x remove filters", activities_path %> </p>
+<% end %>
+
 
 <div class="index-title">
   <% if params[:query].present? %>
