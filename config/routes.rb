@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post '/bookings', to: 'bookings#create', as: :bookings
   get '/bookings/checkout', to: 'bookings#checkout', as: :checkout
   get '/bookings', to: 'bookings#index', as: :bookings_index
+  delete '/bookings/:id', to: 'bookings#destroy', as: :bookings_destroy
+
 end

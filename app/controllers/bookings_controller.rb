@@ -13,6 +13,12 @@ class BookingsController < ApplicationController
     redirect_to checkout_path
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to checkout_path
+  end
+
   def checkout
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
   end
