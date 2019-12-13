@@ -79,7 +79,22 @@
   </div>
 
   <h2 class="titles">Recommendations</h2>
-
+  <% @activities = Activity.last(5) %>
+  <% @activities.each do |activity| %>
+    <a class="link-none" href="<%= activity_path(activity) %>">
+      <div class="activity-card">
+          <img src= <%=activity.photo_url %> />
+        <div class="activity-infos">
+          <h3 class="activity-title"><%=activity.title%></h3>
+          <div class="activity-pricing">
+            <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
+            <h5 class="new-price"> <%= activity.price %>€ </h5>
+          </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
+  <br>
 </div>
 
 

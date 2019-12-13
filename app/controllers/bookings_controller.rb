@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
         @group.completed = true
         @group.save
       end
-    redirect_to checkout_path
+    redirect_to booking_path(@booking)
   end
 
   def destroy
@@ -21,6 +21,10 @@ class BookingsController < ApplicationController
 
   def checkout
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def index

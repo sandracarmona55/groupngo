@@ -8,7 +8,7 @@ class Group < ApplicationRecord
       return "full"
     else
       difference = self.activity.min_number - self.bookings.count
-      return "#{difference} spots"
+      return difference
     end
   end
 end
