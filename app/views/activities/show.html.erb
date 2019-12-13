@@ -94,7 +94,11 @@
                   <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
                 </div>
               <% end %>
+              <% if g.spots == "full" %>
+              <p id="spots"> <%= g.spots %> </p>
+              <% else %>
               <p id="spots"> <%= g.spots %> spots </p>
+              <% end %>
             </div>
           <% end %>
           <br>
@@ -103,7 +107,7 @@
 
       </div>
       <% end %>
-      <%= b.submit "Join this group!", class:"join-group", data: { confirm: "Are you sure?" }, id:"join-btn" %>
+      <%= b.submit "Join this group!", class:"join-group", id:"join-btn" %>
     <% end %>
 
         <script>

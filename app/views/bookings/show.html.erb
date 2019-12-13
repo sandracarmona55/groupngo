@@ -5,24 +5,36 @@ You joined a new group!
 <div class="container">
   <div class="group-title">
     <p>Congrats <% @booking.user.name %>! You booked <strong> <%= @booking.group.activity.title %></strong>!
+    <br>
+    <br>
+    <div class="group-description">
+      <div class="infos d-flex align-items-center">
+        <i class="fas fa-clock symbol"></i>
+        <div class="time">
+          <%= @booking.group.date.strftime("%d %B %Y") %>
+          <%= @booking.group.date.strftime("%H:%M") %>
+        </div>
+      </div>
+      <br>
+      <div class="infos d-flex align-items-center">
+        <i class="fas fa-map-marker symbol"></i>
+        <%= @booking.group.activity.address %>
+      </div>
+      <br>
+      <div class="infos d-flex align-items-center">
+        <i class="fas fa-coins symbol"></i>
+        <%= @booking.group.activity.price %>€
+      </div>
+    </div>
+  <br>
     <% if @booking.group.completed == false %></p>
-      <p>The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity! You can check the updates in My Groups.</p>
+      <p>The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity! You can check the updates in <strong><%= link_to "My Groups", bookings_index_path, class:"no-link" %></strong>.</p>
     <% else %>
       The group is full! The activity is confirmed
     <% end %>
-  </div>
-  <div class="group-description">
-    <div class="infos d-flex">
-      <i class="fas fa-clock"></i>
-      <p><%= @booking.group.date.strftime("%d/%m/%y - %H:%M") %></p>
-    </div>
-    <div class="infos d-flex">
-      <i class="fas fa-map-marker"></i>
-      <p><%= @booking.group.activity.address %></p>
-    </div>
-    <div class="infos d-flex">
-      <i class="fas fa-coins"></i>
-      <p><%= @booking.group.activity.price %>€</p>
+
+    <div class="text-center" style="margin-top: 40px">
+    <%= link_to "GO TO CHECKOUT", checkout_path, class:"join-group-selected go-to-checkout" %>
     </div>
   </div>
 </div>
