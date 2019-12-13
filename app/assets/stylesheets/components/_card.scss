@@ -22,11 +22,19 @@ a {
   display: flex;
   margin-top: 15px;
   border: solid 1px #e2e0e0;
+  //border-left: solid 4px #FD894A;
+  border-right: solid 3px #FD894A;
+  box-shadow: 0px 0px 5px 1px rgba(237,237,237,1);
   img {
     height: 100%;
     width: 140px;
     object-fit: cover;
   }
+
+  //.far {
+    //color: #FD894A;
+   // padding: -20px;
+  //}
 
   .activity-infos {
     padding: 16px;
