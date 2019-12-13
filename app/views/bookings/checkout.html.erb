@@ -9,9 +9,9 @@
       <h5 class="recap-title"><%= booking.group.activity.title %></h5>
       <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
       </div>
-      <div class="col-2 recap-price">
-        <h5 class="text-center"><%= booking.group.activity.price %>€</h5>
-        <%= link_to "delete", bookings_destroy_path(booking), method: :delete %>
+      <div class="col-2 recap-price text-center">
+        <h5 class=""><%= booking.group.activity.price %>€</h5>
+        <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
       </div>
     </div>
     <% end %>
