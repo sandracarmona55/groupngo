@@ -12,16 +12,17 @@ a {
 
 .results-title {
   color: #FD894A;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .activity-card {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background-color: #FCFCFC;
   display: flex;
-  margin-top: 15px;
-  border: solid 1px #e2e0e0;
+  margin-top: 18px;
+  // border: solid 1px #e2e0e0;
+  box-shadow: 0px 0px 5px 1px rgba(237,237,237,1);
   img {
     height: 100%;
     width: 140px;
@@ -37,7 +38,7 @@ a {
 
   .activity-title {
     font-size: 16px;
-    font-weight: bold;
+    // font-weight: bold;
     margin: 0;
     color: black;
     text-decoration: none;
