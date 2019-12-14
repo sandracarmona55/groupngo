@@ -107,7 +107,7 @@
 
       </div>
       <% end %>
-      <%= b.submit "Join this group!", class:"join-group", id:"join-btn" %>
+      <%= b.submit "Join this group!", class:"join-group", id:"join-btn", disabled: true %>
     <% end %>
 
         <script>
@@ -122,6 +122,7 @@
               const target = event.currentTarget.dataset.checkId
               document.getElementById(`check-g-${target}`).click()
               join.classList.add('join-group-selected')
+              join.disabled = false
             })
           })
 
