@@ -11,7 +11,7 @@
       <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
       </div>
       <div class="col-2 recap-price text-center">
-        <h5 class=""><%= booking.group.activity.price %>€</h5>
+        <h5 class=""><%= humanized_money_with_symbol(booking.group.activity.price) %></h5>
         <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
       </div>
     </div>
@@ -23,11 +23,25 @@
       <div class="col-10 recap-infos">
       <h5 class="recap-title">TOTAL</h5>
       </div>
-      <% total_price = 0 %>
-      <% @bookings.each do |booking| %>
-      <% total_price += booking.group.activity.price %>
-      <% end %>
-      <h5 class="col-2 recap-price text-center"> <%= total_price %>€ </h5>
+      <h5 class="col-2 recap-price text-center"> <%= @total_price %>€ </h5>
     </div>
   </div>
+
+  <div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <button id="pay" class="btn btn-primary">Pay</button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe("<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>");
+          stripe.redirectToCheckout({
+            sessionId: "<%= @bookings.first.checkout_session_id %>"
+          })
+        });
+      </script>
+    </div>
+  </div>
+</div>
 </div>

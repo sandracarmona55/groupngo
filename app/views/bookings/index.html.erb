@@ -17,7 +17,7 @@ My groups
           <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
           <div class="group-pricing d-flex justify-content-between">
             <h5> <%= booking.group.spots %> </h5>
-            <h5 class="group-new-price"> <%= booking.group.activity.price %>€ </h5>
+            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
           </div>
         </div>
       </div>

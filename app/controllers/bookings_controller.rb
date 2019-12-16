@@ -30,7 +30,25 @@ class BookingsController < ApplicationController
   end
 
   def checkout
+    @total_price = 0
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
+    @bookings.each do |booking|
+      @total_price += ((booking.group.activity.price_cents) / 100)
+    end
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: "Activities GroupnGo",
+        amount: @total_price * 100,
+        currency: 'eur',
+        quantity: 1
+      }],
+      success_url: ENV['STRIPE_SUCCESS_URL'],
+      cancel_url: ENV['STRIPE_CANCEL_URL']
+    )
+    @bookings.each do |booking|
+      booking.update(checkout_session_id: session.id)
+    end
   end
 
   def show
