@@ -40,22 +40,15 @@
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
       <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p><em>I really recommend this activity, we had a really good time</em></p>
+        <% @activity.reviews.each do |review| %>
+              <div class="review-content">
+                <h8><%= review.title %></h8>
+                <p><%= review.content %></p>
+                <p><%= review.rating %></p>
+              </div>
+            <% end %>
         </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
-        </div>
+        <p> <%= link_to "Leave a review", new_booking_review_path(@activity), class:"btn-leave-review"%> </p>
       </div>
     </div>
 

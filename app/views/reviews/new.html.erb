@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-5 shadow-sm p-3 mb-5 bg-white rounded">
+        <h2 class="text-center">Leave a review for this booking</h2>
+        <%= simple_form_for([@booking, @review]) do |form| %>
+          <%= form.input :title %>
+          <%= form.input :content, as: :text %>
+          <%= form.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+          <%= b.radio_button + b.label {''} %>
+          <% end %>
+          <div class="btn-submit form-actions text-center">
+            <%= form.button :submit, "Leave a review" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

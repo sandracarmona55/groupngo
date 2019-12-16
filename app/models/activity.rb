@@ -1,5 +1,7 @@
 class Activity < ApplicationRecord
   has_many :groups, dependent: :destroy
+  has_many :bookings, through: :groups
+  has_many :reviews, through: :bookings
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
