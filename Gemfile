@@ -20,6 +20,7 @@ gem 'geocoder'
 
 gem 'money-rails'
 gem 'stripe'
+gem 'stripe_event'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
