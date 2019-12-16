@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(params_review)
     @review.booking = @booking
     @review.save
-    redirect_to activity_path(@booking.activity_id)
+    redirect_to activity_path(@booking)
   end
 
   private
