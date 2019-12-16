@@ -13,5 +13,6 @@ class ActivitiesController < ApplicationController
     end
     @groups = @groups_unorder.sort
     @booking = Booking.new
+    @bookings = @activity.bookings
   end
 end

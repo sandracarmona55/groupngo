@@ -39,22 +39,44 @@
 
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p><em>I really recommend this activity, we had a really good time</em></p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
+      <div class="reviews">
+        <% @activity.reviews.first(5).each do |review| %>
+              <div class="review-content">
+                <h8 class="reviewtitle"><%= review.title %></h8>
+                <p><% if review.rating == 5 %></p>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <% elsif review.rating == 4 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif review.rating == 3 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif review.rating == 2 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                 <% elsif review.rating == 1 %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <% end %>
+                <p class="reviewcontent"><%= review.content %></p>
+              </div>
+            <% end %>
         </div>
       </div>
     </div>
