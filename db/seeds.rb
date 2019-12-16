@@ -22,6 +22,7 @@ act1 = Activity.create(title: "Fast Track Sagrada Familia Guided Tour",
   deadline: 7,
   photo_url:"https://images.unsplash.com/photo-1569660991241-748962701d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
+
 act2 = Activity.create(
   title: "Gaudi's Casa Batlló Admission Ticket with Smart Guide",
   description: "Skip the strict schedule of guided tour groups and explore at your own pace, while still learning more than you could independently, during this smart guide experience at Gaudi’s Casa Batlló. Visit the Noble floor, loft, roof terrace, and more, and enjoy time to explore after the smart guide tour too—there’s no time limit on this Casa Batlló experience which will especially charm art fans.",

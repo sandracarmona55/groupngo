@@ -11,7 +11,7 @@
       <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
       </div>
       <div class="col-2 recap-price text-center">
-        <h5 class=""><%= booking.group.activity.price %>€</h5>
+        <h5 class=""><%= humanized_money_with_symbol(booking.group.activity.price) %></h5>
         <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
       </div>
     </div>
@@ -25,7 +25,7 @@
       </div>
       <% total_price = 0 %>
       <% @bookings.each do |booking| %>
-      <% total_price += booking.group.activity.price %>
+      <% total_price += ((booking.group.activity.price_cents) / 100) %>
       <% end %>
       <h5 class="col-2 recap-price text-center"> <%= total_price %>€ </h5>
     </div>
