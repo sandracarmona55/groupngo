@@ -6,16 +6,26 @@ class BookingsController < ApplicationController
     @booking.group = @group
     @booking.user = current_user
     @booking.save
-      if @group.bookings.count >= @activity.min_number
-        @group.completed = true
-        @group.save
-      end
+    if @group.bookings.count >= @activity.min_number
+      @group.completed = true
+    else
+      @group.completed = false
+    end
+    @group.save
     redirect_to booking_path(@booking)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
+    @group = @booking.group
+    @activity = @group.activity
     @booking.destroy
+    if @group.bookings.count >= @activity.min_number
+      @group.completed = true
+    else
+      @group.completed = false
+    end
+    @group.save
     redirect_to checkout_path
   end
 

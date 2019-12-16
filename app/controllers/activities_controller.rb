@@ -7,8 +7,11 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
-
-    @groups = @activity.groups.group_by { |group| group.date.day }
+    # @groups_grouped = @activity.groups.group_by { |group| group.date.day }
+    @groups_unorder = @activity.groups.group_by do |group|
+      group.date.day
+    end
+    @groups = @groups_unorder.sort
     @booking = Booking.new
   end
 end

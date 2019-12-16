@@ -5,7 +5,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 // import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { openTab } from './show';
+import { groups } from './groups';
 
 
 initMapbox();
 openTab();
+groups();
