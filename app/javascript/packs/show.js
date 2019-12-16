@@ -9,6 +9,12 @@ console.log(join);
 
 const description = document.getElementById("description");
 console.log(description)
+buttondescription.addEventListener("click", (event) => {
+  description.style.display = "block";
+  join.style.display = "none";
+  buttondescription.className += " active";
+  buttonjoin.classList.remove("active");
+});
 
 buttonjoin.addEventListener("click", (event) => {
   description.style.display = "none";
@@ -18,12 +24,6 @@ buttonjoin.addEventListener("click", (event) => {
 
 });
 
-buttondescription.addEventListener("click", (event) => {
-  description.style.display = "block";
-  join.style.display = "none";
-  buttondescription.className += " active";
-  buttonjoin.classList.remove("active");
-});
 };
 
 export { openTab };
