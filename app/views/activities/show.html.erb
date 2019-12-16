@@ -44,52 +44,40 @@
               <div class="review-content">
                 <h8 class="reviewtitle"><%= review.title %></h8>
                 <p><% if review.rating == 5 %></p>
-                <div>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                </div>
-                <div class= "stars">
                 <% elsif review.rating == 4 %>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
-                </div>
-                <div class= "stars">
                 <% elsif review.rating == 3 %>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
-                </div>
-                <div class= "stars">
                 <% elsif review.rating == 2 %>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
-                </div>
-                <div class= "stars">
                  <% elsif review.rating == 1 %>
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
-                 </div>
                 <% end %>
-                <p><%= review.content %></p>
+                <p class="reviewcontent"><%= review.content %></p>
               </div>
             <% end %>
-
         </div>
-        <p> <%= link_to "Leave a review", new_booking_review_path(1), class:"btn-leave-review"%> </p>
       </div>
     </div>
 
