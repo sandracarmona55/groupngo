@@ -40,7 +40,7 @@
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
       <div class="reviews">
-        <% @activity.reviews.first(5).each do |review| %>
+        <% @activity.reviews.each do |review| %>
               <div class="review-content">
                 <h8><%= review.title %></h8>
                 <p><%= review.content %></p>
@@ -48,7 +48,7 @@
               </div>
             <% end %>
         </div>
-        <p> <%= link_to "Leave a review", new_booking_review_path(@activity), class:"btn-leave-review"%> </p>
+        <p> <%= link_to "Leave a review", new_booking_review_path(15), class:"btn-leave-review"%> </p>
       </div>
     </div>
 
