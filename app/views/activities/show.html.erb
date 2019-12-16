@@ -40,11 +40,11 @@
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
       <div class="reviews">
-        <% @activity.reviews.each do |review| %>
+        <% @activity.reviews.first(5).each do |review| %>
               <div class="review-content">
-                <h8><%= review.title %></h8>
-                <% if review.rating == 5 %>
-                <div class= "stars">
+                <h8 class="reviewtitle"><%= review.title %></h8>
+                <p><% if review.rating == 5 %></p>
+                <div>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
