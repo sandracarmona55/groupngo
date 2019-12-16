@@ -11,3 +11,4 @@ import { groups } from './groups';
 initMapbox();
 openTab();
 groups();
+changeTabUser();

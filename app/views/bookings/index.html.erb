@@ -3,13 +3,43 @@ My groups
 </div>
 
 <div class="activity-btns">
-    <button class="activity-btn active" id="btn-join">Pending</button>
-    <button class="activity-btn" id="btn-join">Upcoming</button>
-    <button class="activity-btn" id="btn-description" >Past</button>
+    <button class="activity-btn active" id="btn-pending">Pending</button>
+    <button class="activity-btn" id="btn-paid">Upcoming</button>
+    <button class="activity-btn" id="btn-past" >Past</button>
   </div>
 
 <div class="container">
-  <div class="activity-cards">
+  <div class="activity-cards" id="pending">
+    <%  @bookings_pending.each do |booking| %>
+      <div class="activity-card">
+        <div class="activity-infos">
+          <h3 class="group-title"><%=booking.group.activity.title%></h3>
+          <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
+          <div class="group-pricing d-flex justify-content-between">
+            <h5> <%= booking.group.spots %> </h5>
+            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="activity-cards" id="paid">
+    <%  @bookings_pending.each do |booking| %>
+      <div class="activity-card">
+        <div class="activity-infos">
+          <h3 class="group-title"><%=booking.group.activity.title%></h3>
+          <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
+          <div class="group-pricing d-flex justify-content-between">
+            <h5> <%= booking.group.spots %> </h5>
+            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="activity-cards" id="past">
     <%  @bookings_pending.each do |booking| %>
       <div class="activity-card">
         <div class="activity-infos">
