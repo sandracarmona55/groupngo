@@ -77,32 +77,42 @@
         <div class="day">
           <p><%= group.first.date.strftime("%b")  %> </p>
           <p id="day-orange"><%= group.first.date.strftime("%d")  %> </p>
+          <!-- This is for the days left -->
         </div>
 
-        <div class="times">
-          <% group.each do |g| %>
-            <div class="time text-center">
-              <!-- <div class="time-each" data-check-id='<%= g.id %>'> -->
+        <div class="time-and-days">
+          <div class="times">
+            <% group.each do |g| %>
+              <div class="time text-center">
+                <!-- <div class="time-each" data-check-id='<%= g.id %>'> -->
 
-              <% if g.completed %>
-                <div class="time-completed">
-                  <p id="time"><%= g.date.strftime("%H:%M") %> </p>
-                </div>
-              <% else %>
-                <div class="time-each" data-check-id='<%= g.id %>'>
-                  <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
-                  <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
-                </div>
-              <% end %>
-              <% if g.spots == "full" %>
-              <p id="spots"> <%= g.spots %> </p>
-              <% else %>
-              <p id="spots"> <%= g.spots %> spots </p>
-              <% end %>
-            </div>
-          <% end %>
-          <br>
-          <br>
+                <% if g.completed %>
+                  <!-- This is for the time -->
+                  <div class="time-completed">
+                    <p id="time"><%= g.date.strftime("%H:%M") %> </p>
+                  </div>
+                <% else %>
+                  <div class="time-each" data-check-id='<%= g.id %>'>
+                    <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
+                    <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
+                  </div>
+                <% end %>
+                <!-- This is for the spots left -->
+                <% if g.spots == "full" %>
+                <p id="spots"> <%= g.spots %> </p>
+                <% else %>
+                <p id="spots"> <%= g.spots %> spots </p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="days-left">
+            <% if group.first.days_left > 1 %>
+              <p> <%= group.first.days_left %> days left to join</p>
+            <% elsif group.first.days_left == 1 %>
+              <p> <%= group.first.days_left %> day left to join</p>
+            <% end %>
+          </div>
         </div>
 
       </div>
