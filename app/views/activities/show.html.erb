@@ -40,7 +40,7 @@
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
       <div class="reviews">
-        <% @activity.reviews.first(5).each do |review| %>
+        <% @activity.reviews.each do |review| %>
               <div class="review-content">
                 <h8 class="reviewtitle"><%= review.title %></h8>
                 <p><% if review.rating == 5 %>
