@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(params_review)
     @review.booking = @booking
     if @review.save
-    redirect_to activity_path(@booking.group.activity)
+      redirect_to activity_path(@booking.group.activity)
     else
       render :new
     end
