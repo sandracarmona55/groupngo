@@ -4,12 +4,22 @@ class Group < ApplicationRecord
   # has_many :users, through: :bookings
 
   def spots
-    if self.bookings.count >= self.activity.min_number
-      return "full"
-    else
-      difference = self.activity.min_number - self.bookings.count
-      return difference
+    total_quantity = 0
+    self.bookings.each do |booking|
+      total_quantity += booking.quantity
     end
+      if total_quantity >= self.activity.min_number
+          return "full"
+      else
+        difference = self.activity.min_number - total_quantity
+        return difference
+      end
+  #   if self.bookings.count >= self.activity.min_number
+  #     return "full"
+  #   else
+  #     difference = self.activity.min_number - self.bookings.count
+  #     return difference
+  #   end
   end
 
   def days_left

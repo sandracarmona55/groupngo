@@ -9,9 +9,10 @@
       <div class="col-10 recap-infos">
       <h5 class="recap-title"><%= booking.group.activity.title %></h5>
       <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
+      <p class="recap-dates"> <%= booking.quantity %> <i class="fas fa-users"></i> </p>
       </div>
       <div class="col-2 recap-price text-center">
-        <h5 class=""><%= humanized_money_with_symbol(booking.group.activity.price) %></h5>
+        <h5 class=""><%= (booking.group.activity.price_cents * booking.quantity) /100 %>€</h5>
         <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
       </div>
     </div>
