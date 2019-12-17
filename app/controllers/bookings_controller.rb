@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
     @group = Group.find(params[:booking][:group].to_i)
     @activity = @group.activity
     @booking.group = @group
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @total_price = 0
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
     @bookings.each do |booking|
-      @total_price += (booking.group.activity.price_cents / 100.0)
+      @total_price += ((booking.group.activity.price_cents * booking.quantity) / 100)
     end
 
     session = Stripe::Checkout::Session.create(
@@ -60,5 +60,11 @@ class BookingsController < ApplicationController
     @bookings_pending = Booking.where(user_id: current_user.id, paid_status: false)
     @bookings_paid = Booking.where(user_id: current_user.id, paid_status: true)
     @bookings_past = Booking.where(user_id: current_user.id, paid_status: true)
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:quantity)
   end
 end
