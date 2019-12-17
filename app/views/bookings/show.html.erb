@@ -6,6 +6,7 @@ You joined a new group!
   <div class="group-title">
     <p>Congrats <% @booking.user.name %>! You booked <strong> <%= @booking.group.activity.title %></strong>!
     <br>
+    <br>
     <div class="group-description">
       <div class="infos d-flex align-items-center mb-2">
         <i class="fas fa-clock symbol"></i>
@@ -31,6 +32,7 @@ You joined a new group!
       </div>
     </div>
 
+    <br>
     <% if @booking.group.completed == false %></p>
       <p class="info-activity-completed">The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity! You can check the updates in <strong><%= link_to "My Groups", bookings_index_path, class:"no-link" %></strong>.</p>
     <% else %>
