@@ -25,32 +25,37 @@ My groups
   </div>
 
   <div class="activity-cards" id="paid">
-    <%  @bookings_pending.each do |booking| %>
-      <div class="activity-card">
-        <div class="activity-infos">
-          <h3 class="group-title"><%=booking.group.activity.title%></h3>
-          <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-          <div class="group-pricing d-flex justify-content-between">
-            <h5> <%= booking.group.spots %> </h5>
-            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+    <%  @bookings_paid.each do |booking| %>
+      <% if booking.group.date >= DateTime.now %>
+        <div class="activity-card">
+          <div class="activity-infos">
+            <h3 class="group-title"><%=booking.group.activity.title%></h3>
+            <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
+            <div class="group-pricing d-flex justify-content-between">
+              <h5> <%= booking.group.spots %> </h5>
+              <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 
   <div class="activity-cards" id="past">
-    <%  @bookings_pending.each do |booking| %>
-      <div class="activity-card">
-        <div class="activity-infos">
-          <h3 class="group-title"><%=booking.group.activity.title%></h3>
-          <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-          <div class="group-pricing d-flex justify-content-between">
-            <h5> <%= booking.group.spots %> </h5>
-            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+    <%  @bookings_past.each do |booking| %>
+      <% if booking.group.date < DateTime.now %>
+        <div class="activity-card">
+          <div class="activity-infos">
+            <h3 class="group-title"><%=booking.group.activity.title%></h3>
+            <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
+            <div class="group-pricing d-flex justify-content-between">
+              <h5> <%= booking.group.spots %> </h5>
+              <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
+            </div>
           </div>
         </div>
-      </div>
+        <% else %>
+      <% end %>
     <% end %>
   </div>
 </div>

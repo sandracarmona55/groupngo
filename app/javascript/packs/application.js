@@ -7,8 +7,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { openTab } from './show';
 import { groups } from './groups';
 
-
 initMapbox();
 openTab();
 groups();
-changeTabUser();
