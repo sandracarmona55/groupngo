@@ -6,32 +6,30 @@
   <div class="recap">
     <% @bookings.each do |booking| %>
     <div class="row recap-line d-flex">
-      <div class="col-10 recap-infos">
+      <div class="col-9 recap-infos">
       <h5 class="recap-title"><%= booking.group.activity.title %></h5>
       <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
       <p class="recap-dates"> <%= booking.quantity %> <i class="fas fa-users"></i> </p>
       </div>
+
       <div class="col-2 recap-price text-center">
         <h5 class=""><%= (booking.group.activity.price_cents * booking.quantity) /100 %>€</h5>
         <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
       </div>
     </div>
+    <br>
     <% end %>
   </div>
 
-  <div class="recap">
-    <div class="row recap-line d-flex">
-      <div class="col-10 recap-infos">
-      <h5 class="recap-title">TOTAL</h5>
-      </div>
-      <h5 class="col-2 recap-price text-center"> <%= @total_price %>€ </h5>
-    </div>
+  <div class="row recap d-flex">
+      <h5 class="col-9 recap-infos">TOTAL</h5>
+      <h5 class="col-3 recap-price text-center"> <%= @total_price %>€ </h5>
   </div>
 
   <div class="container">
   <div class="row py-4">
     <div class="col">
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <button id="pay" class="join-group-selected">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
