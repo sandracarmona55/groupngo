@@ -19,7 +19,7 @@
     <div class="about">
       <div class="about-and-price">
         <h3 id="show-subtitle-about">About</h3>
-        <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money_with_symbol(@activity.price) %> </p>
+        <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money(@activity.price) %>€ </p>
       </div>
       <p> <%= @activity.description %> </p>
     </div>
@@ -91,7 +91,7 @@
     <div class="show-title">
       <%= @activity.title %>
     </div>
-
+<br>
     <%= form_for @booking do |b| %>
       <% @groups.each do |day, group| %>
       <% group.sort_by! { |group| group.date} %>
@@ -144,8 +144,8 @@
       </div>
       <% end %>
       <div class="div-join-button">
-        <button type="button" class="join-group" id="join-btn" data-toggle="modal" data-target="#exampleModal">
-          Join this group!
+        <button type="button" class="join-group" id="join-btn" disabled="true" data-toggle="modal" data-target="#exampleModal">
+          JOIN THIS GROUP!
         </button>
       </div>
 
