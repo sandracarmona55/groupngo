@@ -17,7 +17,10 @@
     <br>
 
     <div class="about">
-      <h3 class="show-subtitle">About</h3>
+      <div class="about-and-price">
+        <h3 id="show-subtitle-about">About</h3>
+        <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money_with_symbol(@activity.price) %> </p>
+      </div>
       <p> <%= @activity.description %> </p>
     </div>
 
@@ -140,9 +143,11 @@
 
       </div>
       <% end %>
-      <button type="button" class="join-group" id="join-btn" data-toggle="modal" data-target="#exampleModal">
-        Join this group!
-      </button>
+      <div class="div-join-button">
+        <button type="button" class="join-group" id="join-btn" data-toggle="modal" data-target="#exampleModal">
+          Join this group!
+        </button>
+      </div>
 
       <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
