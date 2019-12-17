@@ -39,22 +39,44 @@
 
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p><em>I really recommend this activity, we had a really good time</em></p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-review">
-        <div class="review-content">
-          <p>I really recommend this activity, we had a really good time</p>
+      <div class="reviews">
+        <% @activity.reviews.first(5).each do |review| %>
+              <div class="review-content">
+                <h8 class="reviewtitle"><%= review.title %></h8>
+                <p><% if review.rating == 5 %></p>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <% elsif review.rating == 4 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif review.rating == 3 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif review.rating == 2 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                 <% elsif review.rating == 1 %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <% end %>
+                <p class="reviewcontent"><%= review.content %></p>
+              </div>
+            <% end %>
         </div>
       </div>
     </div>
@@ -77,32 +99,42 @@
         <div class="day">
           <p><%= group.first.date.strftime("%b")  %> </p>
           <p id="day-orange"><%= group.first.date.strftime("%d")  %> </p>
+          <!-- This is for the days left -->
         </div>
 
-        <div class="times">
-          <% group.each do |g| %>
-            <div class="time text-center">
-              <!-- <div class="time-each" data-check-id='<%= g.id %>'> -->
+        <div class="time-and-days">
+          <div class="times">
+            <% group.each do |g| %>
+              <div class="time text-center">
+                <!-- <div class="time-each" data-check-id='<%= g.id %>'> -->
 
-              <% if g.completed %>
-                <div class="time-completed">
-                  <p id="time"><%= g.date.strftime("%H:%M") %> </p>
-                </div>
-              <% else %>
-                <div class="time-each" data-check-id='<%= g.id %>'>
-                  <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
-                  <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
-                </div>
-              <% end %>
-              <% if g.spots == "full" %>
-              <p id="spots"> <%= g.spots %> </p>
-              <% else %>
-              <p id="spots"> <%= g.spots %> spots </p>
-              <% end %>
-            </div>
-          <% end %>
-          <br>
-          <br>
+                <% if g.completed %>
+                  <!-- This is for the time -->
+                  <div class="time-completed">
+                    <p id="time"><%= g.date.strftime("%H:%M") %> </p>
+                  </div>
+                <% else %>
+                  <div class="time-each" data-check-id='<%= g.id %>'>
+                    <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
+                    <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
+                  </div>
+                <% end %>
+                <!-- This is for the spots left -->
+                <% if g.spots == "full" %>
+                <p id="spots"> <%= g.spots %> </p>
+                <% else %>
+                <p id="spots"> <%= g.spots %> spots </p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="days-left">
+            <% if group.first.days_left > 1 %>
+              <p> <%= group.first.days_left %> days left to join</p>
+            <% elsif group.first.days_left == 1 %>
+              <p> <%= group.first.days_left %> day left to join</p>
+            <% end %>
+          </div>
         </div>
 
       </div>
