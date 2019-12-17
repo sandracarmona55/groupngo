@@ -7,7 +7,6 @@
           <%= form.input :title %>
           <%= form.input :content, as: :text %>
           <%= form.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-
           <div class="btn-submit form-actions text-center">
             <%= form.button :submit, "Leave a review" %>
           </div>
