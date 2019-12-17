@@ -26,7 +26,7 @@ act1 = Activity.create(title: "Fast Track Sagrada Familia Guided Tour",
 act2 = Activity.create(
   title: "Gaudi's Casa Batlló Admission Ticket with Smart Guide",
   description: "Skip the strict schedule of guided tour groups and explore at your own pace, while still learning more than you could independently, during this smart guide experience at Gaudi’s Casa Batlló. Visit the Noble floor, loft, roof terrace, and more, and enjoy time to explore after the smart guide tour too—there’s no time limit on this Casa Batlló experience which will especially charm art fans.",
-  address: "Passeig de Gracia, 43, 08007 Barcelona, Spain",
+  address: "Passeig de Gracia, 43, Barcelona",
   initial_price: 25,
   discount: 20,
   min_number: 15,
@@ -39,7 +39,7 @@ act2 = Activity.create(
 act3 = Activity.create(
   title: "Barcelona City Tour Hop-On Hop-Off",
   description: "Getting around Barcelona’s must-sees on foot can be tiring and time-consuming, especially in summer’s heat. Check through the attractions with ease and in less time with a 1- or 2-day hop-on hop-off double-decker tour pass, including audio commentary on the sights. Stay aboard for a time-saving city overview, or hop on and off at stops along the two routes to explore further. Upgrade to a 2-day pass to fit your vacation schedule.",
-  address: "Parc del Forum, Barcelona Cathedral",
+  address: "Parc del Forum, Barcelona",
   initial_price: 30,
   discount: 25,
   min_number: 10,
@@ -65,7 +65,7 @@ act4= Activity.create(
 act5= Activity.create(
   title: "Interactive Spanish Cooking Experience in Barcelona",
   description: "Rather than ordering tapas and paella at Barcelona’s restaurants, cook them for yourself with a local chef. Learn about local produce at La Boqueria market before visiting a teaching kitchen to prep tapas, mix sangria, and cook a paella. Sit down to eat them with your fellow cooks and opt to enjoy a “chupito” shot at a bar to cap your experience. A choice of time slots provides handy flexibility.",
-  address: "Carrer de la Boqueria, 27, 08002 Barcelona, Spain",
+  address: "Carrer de la Boqueria, 27, Barcelona",
   initial_price: 39,
   discount: 20,
   min_number: 8,
@@ -78,7 +78,7 @@ act5= Activity.create(
 act6= Activity.create(
   title: "Flamenco Night at Tablao Cordobes",
   description: "Watching a flamenco show is a quintessential Barcelona experience and the Tablao Cordobes is one of the city’s most popular venues, located right on the central Las Ramblas boulevard. Enjoy the dazzling performance by professional flamenco dancers and live musicians, or upgrade to include a delicious paella dinner or drinks.",
-  address: "La Rambla, 35, 08002 Barcelona",
+  address: "La Rambla, 35, Barcelona",
   initial_price: 44,
   discount: 20,
   min_number: 10,
@@ -91,7 +91,7 @@ act6= Activity.create(
 act7= Activity.create(
   title: "Barcelona Half-Day Bike Tour",
   description: "Zip around Barcelona’s sights by bike—an energizing alternative to pounding the sidewalks or traveling by enclosed bus. This half-day bike tour uses easy-to-ride bikes, follows routes that avoid traffic, and features a local guide for the full lowdown on the sights and city’s Culture. The gentle pace, a beach rest break, and child seats on request make it ideal for families and all fitness levels.",
-  address: "Plaça de Sant Jaume, 3, 08002 Barcelona, Spain",
+  address: "Plaça de Sant Jaume, 3, Barcelona",
   initial_price: 28,
   discount: 15,
   min_number: 10,
@@ -117,7 +117,7 @@ act8= Activity.create(
 act9= Activity.create(
   title: "Palau de la Musica Catalana",
   description: "The Palau, an icon of modernist architecture in downtown Barcelona The Palau de la Música Catalana is one of the most representative monuments of the city and It is one of the most recommended tourist attractions of Barcelona. Built between 1905 and 1908 by the great architect Lluis Domènech i Montaner, the Palau de la Música Catalana is an architectural jewel of Catalonia and essential part of any visit to the city, as any of the most fascinating Gaudi buildings. ",
-  address: "Carrer Palau de la Musica, 4-6, 08003 Barcelona, Spain",
+  address: "C/ Palau de la Música, 4-6, Barcelona",
   initial_price: 12,
   discount: 10,
   min_number: 10,
@@ -130,7 +130,7 @@ act9= Activity.create(
 act10= Activity.create(
   title: "Maestros de la Guitarra",
   description: "Barcelona's most famous Spanish and flamenco guitar shows. Maestros de la Guitarra is the only festival of its kind in the world. Since 2000, it has produced in Barcelona more than 3000 Concerts for more than one million music lovers from Spain and from all around the globe.",
-  address: "Avinguda Francesc Cambo, 17, 08003 Barcelona, Spain",
+  address: "Avinguda Francesc Cambo, 17, Barcelona",
   initial_price: 23,
   discount: 15,
   min_number: 10,
@@ -143,7 +143,7 @@ act10= Activity.create(
 act11= Activity.create(
   title: "Barcelona Improv Group",
   description: "BIG is Barcelona's premiere improvised theatre & comedy company, bringing improv to Barcelona since 2011 with monthly main stage shows, weekly drop in workshops, classes, and integrated professional training. Please check website and Facebook for upcoming shows. BIG also hosts the Barcelona Improv Group International Festival every November.",
-  address: "C/Creu dels Molers 17, 08004 Barcelona, Spain",
+  address: "C/Creu dels Molers 17, Barcelona",
   initial_price: 18,
   discount: 15,
   min_number: 12,
@@ -182,7 +182,7 @@ act13= Activity.create(
 act14= Activity.create(
   title: "Montefusco Cycling",
   description: "In this private tour our guide will take you to the best roads around the city, including some solitaire roads and demanding climbs. You will have a full carbon bike equipped with Shimano 105 groupset, compact crank 34-50, 11 speed. This is a nice cycling stage and also including the best views over the city! We will adapt the distance and difficulty to your needs. From 60 to 85 km including 3-4 climbs. Also we adapt the pace so you can feel comfortable with it!",
-  address: "Parc d’Atraccions Tibidabo, Pl. del Tibidabo, 3-4, 08035 Barcelona Spain",
+  address: "Parc d’Atraccions Tibidabo, Pl. del Tibidabo, 3-4, Barcelona",
   initial_price: 90,
   discount: 10,
   min_number: 5,
@@ -209,7 +209,7 @@ act16= Activity.create(
   title: "Sunrise Beach Yoga",
   description: "Let´s start the day with some one hour power yoga at Barcelona Beach (for all levels) and share some fruits after practice! You will practice on a concrete platform so you won´t get sandy, and you will have the best ocean view!
 Yoga mats provided.",
-  address: "Playa de la Mar Bella, Av. del Litoral, 08019 Barcelona Spain",
+  address: "Playa de la Mar Bella, Av. del Litoral, Barcelona",
   initial_price: 25,
   discount: 15,
   min_number: 10,
@@ -222,7 +222,7 @@ Yoga mats provided.",
 act17= Activity.create(
   title: "Yoga By The Sea",
   description: " This yoga class is the perfect way to enjoy some Relaxation in the busy city while also taking in the sites of the beautiful seaside. While the sounds of the waves surround you, we will practice a gentle vinyasa flow designed to leave you feeling relaxed and ready to go with a clear mind. ",
-  address: "Playa de La Barceloneta, Paseo Maritimo Barceloneta, 14, 08003 Barcelona Spain",
+  address: "Playa de La Barceloneta, Paseo Maritimo Barceloneta, 14, Barcelona",
   initial_price: 15,
   discount: 10,
   min_number: 10,
@@ -235,7 +235,7 @@ act17= Activity.create(
 act18 = Activity.create(
   title: "Art and Wine: Paint and sip in Barcelona",
   description: "I will guide you throughout the class so you can enjoy a few hours in a relaxing and joyful environment. You do not need previous experience or to bring any material, I will prepare even the smallest detail. You will be surprised about what you can express and the beautiful result you will get in just 2 hours and half.",
-  address: "Gracia, Gracia, Barcelona, Catalonia",
+  address: "Gracia, Gracia, Barcelona",
   initial_price: 40,
   discount: 20,
   min_number: 5,
