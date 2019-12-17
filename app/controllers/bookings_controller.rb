@@ -33,13 +33,14 @@ class BookingsController < ApplicationController
     @total_price = 0
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
     @bookings.each do |booking|
-      @total_price += ((booking.group.activity.price_cents) / 100)
+      @total_price += (booking.group.activity.price_cents / 100.0)
     end
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: "Activities GroupnGo",
-        amount: @total_price * 100,
+        amount: (@total_price * 100).to_i,
         currency: 'eur',
         quantity: 1
       }],
@@ -57,6 +58,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings_pending = Booking.where(user_id: current_user.id, paid_status: false)
-    @bookings_paid = Booking.where(user_id: current_user.id, paid_status: false)
+    @bookings_paid = Booking.where(user_id: current_user.id, paid_status: true)
+    @bookings_past = Booking.where(user_id: current_user.id, paid_status: true)
   end
 end
