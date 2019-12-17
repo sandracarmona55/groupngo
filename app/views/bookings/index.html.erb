@@ -2,61 +2,101 @@
 My groups
 </div>
 
-<div class="activity-btns">
+<div class="container">
+  <div class="activity-btns">
     <button class="activity-btn active" id="btn-pending">Pending</button>
     <button class="activity-btn" id="btn-paid">Upcoming</button>
     <button class="activity-btn" id="btn-past" >Past</button>
   </div>
 
-<div class="container">
+
   <div class="activity-cards" id="pending">
-    <%  @bookings_pending.each do |booking| %>
-      <div class="activity-card">
-        <div class="activity-infos">
-          <h3 class="group-title"><%=booking.group.activity.title%></h3>
-          <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-          <div class="group-pricing d-flex justify-content-between">
-            <h5> <%= booking.group.spots %> </h5>
-            <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
-          </div>
+    <br>
+    <% if @bookings_paid.count > 0 %>
+      <div class="infos-group">These activities are still pending, go to checkout to pay and valid them</div>
+    <% else %>
+      <div class="infos-group">You don't have any confirmed activities yet!</div>
+    <% end %>
+    <br>
+
+    <% @bookings_pending.each do |booking| %>
+    <div class="row day-card d-flex">
+      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+        <div>
+          <div><%= booking.group.date.strftime("%b")  %> </div>
+          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
         </div>
       </div>
-      <p> <%= link_to "Leave a review", new_booking_review_path(booking), class:"btn-leave-review"%> </p>
+      <div class="col-10 group-infos">
+        <div class="group-title"><%=booking.group.activity.title%></div>
+        <div class="hour-price d-flex justify-content-between">
+          <div><%= booking.group.date.strftime("%H:%M")  %></div>
+          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+        </div>
+        <div class="infos-group"><em><%= booking.group.spots %> people still need to join your group!</em></div>
+      </div>
+      </div>
     <% end %>
+
+    <br>
+    <div class="text-center" style="margin-top: 40px">
+    <%= link_to "GO TO CHECKOUT", checkout_path, class:"join-group-selected go-to-checkout" %>
+    </div>
   </div>
 
   <div class="activity-cards" id="paid">
-    <%  @bookings_paid.each do |booking| %>
-      <% if booking.group.date >= DateTime.now %>
-        <div class="activity-card">
-          <div class="activity-infos">
-            <h3 class="group-title"><%=booking.group.activity.title%></h3>
-            <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-            <div class="group-pricing d-flex justify-content-between">
-              <h5> <%= booking.group.spots %> </h5>
-              <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
-            </div>
-          </div>
+    <br>
+    <% if @bookings_paid.count > 0 %>
+      <div class="infos-group">These activities are confirmed! Look forward to have your feedback!</div>
+    <% else %>
+      <div class="infos-group">You don't have any confirmed activities yet!</div>
+    <% end %>
+    <br>
+
+    <% @bookings_paid.each do |booking| %>
+    <div class="row day-card d-flex">
+      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+        <div>
+          <div><%= booking.group.date.strftime("%b")  %> </div>
+          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
         </div>
-      <% end %>
+      </div>
+      <div class="col-10 group-infos">
+        <div class="group-title"><%=booking.group.activity.title%></div>
+        <div class="hour-price d-flex justify-content-between">
+          <div><%= booking.group.date.strftime("%H:%M")  %></div>
+          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+        </div>
+      </div>
+      </div>
     <% end %>
   </div>
 
   <div class="activity-cards" id="past">
-    <%  @bookings_past.each do |booking| %>
-      <% if booking.group.date < DateTime.now %>
-        <div class="activity-card">
-          <div class="activity-infos">
-            <h3 class="group-title"><%=booking.group.activity.title%></h3>
-            <p> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-            <div class="group-pricing d-flex justify-content-between">
-              <h5> <%= booking.group.spots %> </h5>
-              <h5 class="group-new-price"> <%= humanized_money_with_symbol(booking.group.activity.price) %> </h5>
-            </div>
-          </div>
+    <br>
+    <% if @bookings_past.count > 0 %>
+      <div class="infos-group">Here are the activities you've done, don't hesitate to leave a review!</div>
+    <% else %>
+      <div class="infos-group">You didn't enjoy any activity yet!</div>
+    <% end %>
+    <br>
+
+    <% @bookings_paid.each do |booking| %>
+    <div class="row day-card d-flex">
+      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+        <div>
+          <div><%= booking.group.date.strftime("%b")  %> </div>
+          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
         </div>
-        <% else %>
-      <% end %>
+      </div>
+      <div class="col-10 group-infos">
+        <div class="group-title"><%=booking.group.activity.title%></div>
+        <div class="hour-price d-flex justify-content-between">
+          <div><%= booking.group.date.strftime("%H:%M")  %></div>
+          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+        </div>
+      </div>
+      </div>
     <% end %>
   </div>
 </div>

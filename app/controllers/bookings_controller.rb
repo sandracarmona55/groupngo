@@ -57,9 +57,10 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings_pending = Booking.where(user_id: current_user.id, paid_status: false)
-    @bookings_paid = Booking.where(user_id: current_user.id, paid_status: true)
-    @bookings_past = Booking.where(user_id: current_user.id, paid_status: true)
+    @bookings = Booking.where(user_id: current_user.id)
+    @bookings_pending = @bookings.where(paid_status: false)
+    @bookings_paid = @bookings.where(paid_status: true)
+    @bookings_past = @bookings.where(paid_status: true)
   end
 
   private

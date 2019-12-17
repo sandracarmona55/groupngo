@@ -94,7 +94,7 @@
     <%= form_for @booking do |b| %>
       <% @groups.each do |day, group| %>
       <% group.sort_by! { |group| group.date} %>
-      <div class="day-card">
+      <div class="day-card d-flex">
 
         <div class="day">
           <p><%= group.first.date.strftime("%b")  %> </p>
