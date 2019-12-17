@@ -8,8 +8,11 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(params_review)
     @review.booking = @booking
-    @review.save
+    if @review.save
     redirect_to activity_path(@booking.group.activity)
+    else
+      render :new
+    end
   end
 
   private
