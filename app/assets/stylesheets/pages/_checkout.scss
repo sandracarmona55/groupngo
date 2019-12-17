@@ -26,6 +26,7 @@
         font-size: 16px;
         font-weight: bold;
         margin:auto;
+        margin-bottom: 10px;
       }
       .recap-dates {
         font-size: 16px;
@@ -37,6 +38,9 @@
       margin: auto;
       color: #FD894A;
       font-size: 20px;
+      a {
+        color: grey;
+      }
     }
   }
 }
@@ -44,4 +48,5 @@
 .checkout-title {
   color: #FD894A;
   margin-top: 15px;
+  font-size: 25px;
 }

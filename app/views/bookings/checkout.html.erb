@@ -1,35 +1,30 @@
 <div class="checkout-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+Checkout
 </div>
 
 <div class="container">
-  <h4 class="checkout-title">CHECKOUT</h4>
   <div class="recap">
     <% @bookings.each do |booking| %>
     <div class="row recap-line d-flex">
       <div class="col-9 recap-infos">
-      <h5 class="recap-title"><%= booking.group.activity.title %></h5>
-      <p class="recap-dates"> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %> </p>
-      <p class="recap-dates"> <%= booking.quantity %> <i class="fas fa-users"></i> </p>
+      <div class="recap-title"><%= booking.group.activity.title %></div>
+      <div class="recap-dates"><i class="fas fa-clock symbol"></i> <%= booking.group.date.strftime("%d/%m/%y - %H:%M")  %></div>
+      <div class="recap-dates"><i class="fas fa-users symbol"></i> <%= booking.quantity %> </div>
+      <div class="recap-dates"><i class="fas fa-coins symbol"></i><strong> <%= (booking.group.activity.price_cents * booking.quantity) /100 %>€</strong></div>
       </div>
 
       <div class="col-2 recap-price text-center">
-        <h5 class=""><%= (booking.group.activity.price_cents * booking.quantity) /100 %>€</h5>
-        <h5> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </h6>
+        <div> <a data-method="delete" href="<%= bookings_destroy_path(booking) %>"><i class="fas fa-trash-alt"></i></a> </div>
       </div>
     </div>
     <br>
     <% end %>
   </div>
 
-  <div class="row recap d-flex">
-      <h5 class="col-9 recap-infos">TOTAL</h5>
-      <h5 class="col-3 recap-price text-center"> <%= @total_price %>€ </h5>
-  </div>
-
   <div class="container">
   <div class="row py-4">
     <div class="col">
-      <button id="pay" class="join-group-selected">Pay</button>
+      <button id="pay" class="join-group-selected">PAY <%= @total_price %>€</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');

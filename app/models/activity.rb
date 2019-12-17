@@ -9,7 +9,7 @@ class Activity < ApplicationRecord
   before_save :set_price
   scope :in_city, ->(city) { city.present? ? where("address like ?", "%#{city}%") : all }
   scope :in_category, ->(category) { category.present? ? where(category: category) : all }
-  scope :under_price, ->(given_price) { given_price.present? ? where("price < ?", given_price) : all }
+  scope :under_price, ->(given_price) { given_price.present? ? where("price_cents < ?", (given_price * 100).to_i) : all }
 
   private
 

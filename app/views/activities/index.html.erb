@@ -22,8 +22,8 @@
     </div>
     <div class="dropdown-menu">
       <%= form_tag activities_path(price:params[:price], query:params[:query], category:params[:category]), method: :get do %>
-        <%= text_field_tag :price, params[:price], placeholder: "Max price"
-        %><% submit_tag %>
+        <%= text_field_tag :price, params[:price], placeholder: "Max price"%>
+        <% submit_tag %>
       <% end %>
     </div>
   </li>
