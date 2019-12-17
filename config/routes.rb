@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/bookings', to: 'bookings#index', as: :bookings_index
   get '/bookings/:id', to: 'bookings#show', as: :booking
   delete '/bookings/:id', to: 'bookings#destroy', as: :bookings_destroy
-  
+
   resources :bookings do
     resources :reviews, only: [:new, :create]
   end
