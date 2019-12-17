@@ -11,12 +11,28 @@ class Activity < ApplicationRecord
   scope :in_category, ->(category) { category.present? ? where(category: category) : all }
   scope :under_price, ->(given_price) { given_price.present? ? where("price < ?", given_price) : all }
 
+  def average_reviews
+    @total_rating = 0
+    @total_reviews = 0
+    self.groups.each do |group|
+      group.bookings.each do |booking|
+        @total_reviews += booking.reviews.count
+        booking.reviews.each do |review|
+          @total_rating += review.rating
+        end
+      end
+    end
+    if @total_reviews < 1
+      return "no reviews"
+    else
+      @average_rating = (@total_rating / @total_reviews).round
+      return @average_rating
+    end
+  end
+
   private
 
   def set_price
     self.price_cents = initial_price * (1 - (discount * 0.01)) * 100
-  end
-
-  def average_reviews
   end
 end
