@@ -50,7 +50,7 @@ buttonpending.addEventListener("click", (event) => {
   pending.style.display = "block";
   paid.style.display = "none";
   past.style.display = "none";
-  buttonpending.className += " active";
+  buttonpending.classList.add("active");
   buttonpaid.classList.remove("active");
   buttonpast.classList.remove("active");
 });
@@ -59,7 +59,7 @@ buttonpaid.addEventListener("click", (event) => {
   paid.style.display = "block";
   pending.style.display = "none";
   past.style.display = "none";
-  buttonpaid.className += " active";
+  buttonpaid.classList.add("active");
   buttonpending.classList.remove("active");
   buttonpast.classList.remove("active");
 });
@@ -68,7 +68,7 @@ buttonpast.addEventListener("click", (event) => {
   past.style.display = "block";
   pending.style.display = "none";
   paid.style.display = "none";
-  buttonpast.className += " active";
+  buttonpast.classList.add("active");
   buttonpending.classList.remove("active");
   buttonpaid.classList.remove("active");
 });
