@@ -51,13 +51,37 @@
             <img src= <%=activity.photo_url %> />
           <div class="activity-infos">
             <h3 class="activity-title"><%=activity.title%></h3>
-            <!-- <div class="stars">
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            </div> -->
+            <p><% if activity.average_reviews == 5 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <% elsif activity.average_reviews == 4 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif activity.average_reviews == 3 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <% elsif activity.average_reviews == 2 %>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                 <% elsif activity.average_reviews == 1 %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i></p>
+                <% end %>
             <div class="activity-pricing">
               <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
               <h5 class="new-price"> <%= humanized_money_with_symbol(activity.price) %> </h5>

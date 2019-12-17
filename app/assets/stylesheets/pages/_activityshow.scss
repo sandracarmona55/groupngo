@@ -1,3 +1,19 @@
+.price-show {
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0px;
+  .color-coin {
+    color: #FD894A;
+  }
+}
+
+.about-and-price {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  margin-bottom: 2px;
+}
+
 .card-activity-title {
   background-size: cover;
   background-position: center;
@@ -56,6 +72,12 @@ button {
   font-weight: bold;
   border-bottom: 1px solid grey;
   padding-bottom: 2px;
+}
+
+#show-subtitle-about {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .about  p {
@@ -177,16 +199,21 @@ background-color: #F0F0F0;
 
 .join-group {
   background-color: grey;
-  width: 91%;
+  width: 100%;
   color: white;
-  position: fixed;
-  bottom: 10px;
   z-index: +1;
   border-radius: 4px;
   border: none;
+  padding: 10px 0;
 }
 
-
+.div-join-button {
+  background-color: white;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0px;
+  width: 92%;
+}
 .join-group-selected {
   width: 91%;
   background-color: #FD894A;
@@ -215,3 +242,11 @@ background-color: #F0F0F0;
 p.reviewcontent {
   margin-bottom: 25px;
 }
+
+.update-button {
+  background-color: #FD894A;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+

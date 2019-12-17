@@ -4,9 +4,21 @@
 }
 
 .go-to-checkout {
-  width: 91%;
-  padding: 5px 15px;
-  margin-top: 30px;
+  width: 100%;
+  background-color: #FD894A;
+  color: white;
+  z-index: +1;
+  border-radius: 4px;
+  padding: 10px 93px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
 
 .no-link {
@@ -14,4 +26,16 @@
   font-size: 16px;
   color: #FD894A;
   text-decoration: underline;
+}
+
+.info-activity-completed {
+  font-weight: lighter;
+}
+
+.div-checkout-button {
+  background-color: white;
+  padding: 18px 0;
+  position: fixed;
+  bottom: 0px;
+  width: 92%;
 }

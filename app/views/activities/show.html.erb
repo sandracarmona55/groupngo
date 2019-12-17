@@ -17,7 +17,10 @@
     <br>
 
     <div class="about">
-      <h3 class="show-subtitle">About</h3>
+      <div class="about-and-price">
+        <h3 id="show-subtitle-about">About</h3>
+        <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money_with_symbol(@activity.price) %> </p>
+      </div>
       <p> <%= @activity.description %> </p>
     </div>
 
@@ -40,7 +43,7 @@
     <div class="reviews">
       <h3 class="show-subtitle">Reviews</h3>
       <div class="reviews">
-        <% @activity.reviews.first(5).each do |review| %>
+        <% @activity.reviews.each do |review| %>
               <div class="review-content">
                 <h8 class="reviewtitle"><%= review.title %></h8>
                 <p><% if review.rating == 5 %>
@@ -80,21 +83,21 @@
         </div>
       </div>
     </div>
-
   </div>
 
+  <div class="container">
   <div id="join" class="tabcontent">
 
     <div class="show-title">
       <%= @activity.title %>
     </div>
 
-    <br>
-
     <%= form_for @booking do |b| %>
       <% @groups.each do |day, group| %>
       <% group.sort_by! { |group| group.date} %>
       <div class="day-card d-flex">
+
+    <% if group.first.days_left >= 1 %>
 
         <div class="day">
           <p><%= group.first.date.strftime("%b")  %> </p>
@@ -136,12 +139,15 @@
             <% end %>
           </div>
         </div>
+      <% end %>
 
       </div>
       <% end %>
-      <button type="button" class="join-group" id="join-btn" data-toggle="modal" data-target="#exampleModal">
-        Join this group!
-      </button>
+      <div class="div-join-button">
+        <button type="button" class="join-group" id="join-btn" data-toggle="modal" data-target="#exampleModal">
+          Join this group!
+        </button>
+      </div>
 
       <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -155,20 +161,23 @@
               </div>
               <div class="modal-body">
                 <div class="col-auto my-1">
-                  <label class="mr-sm-2" for="inlineFormCustomSelect">How many people will you be?</label>
+                  <label class="mr-sm-2" for="inlineFormCustomSelect">How many people are you?</label>
 
-                      <%= b.select :quantity, [1, 2, 3, 4, 5, 6] %>
+                      <%= b.select :quantity, [1, 2, 3, 4, 5, 6]%>
 
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" data-dismiss="modal">Close</button> -->
                 <!-- <button type="button" class="btn btn-primary">Update</button> -->
-                <%= b.submit "Update"%>
+                <%= b.submit "Update", class: "update-button"%>
               </div>
             </div>
           </div>
         </div>
       <%#= b.submit "Join this group!", class:"join-group", id:"join-btn", disabled: true %>
     <% end %>
+  </div>
 </div>
+
+
