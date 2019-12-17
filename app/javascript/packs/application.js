@@ -8,10 +8,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 import { openTab } from './show';
 import { groups } from './groups';
 
-<<<<<<< HEAD
-=======
 initStarRating();
->>>>>>> master
 initMapbox();
 openTab();
 groups();
