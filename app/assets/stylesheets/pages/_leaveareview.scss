@@ -1,0 +1,29 @@
+.btn {
+  color: white;
+  background-color: #FD894A;
+  margin-top: 20px;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.br-theme-css-stars .br-widget a.br-selected:after {
+    color: #FD894A !important;
+}
+
+.br-theme-css-stars .br-widget a.br-active:after {
+  color: #FD894A !important;
+}
+
+input#review_title.form-control.string.required {
+  box-shadow: 1px 1px 7px -4px rgba(0,0,0,0.75);
+  width: 100%
+}
+
+textarea#review_content.form-control.text.required {
+  box-shadow: 1px 1px 7px -4px rgba(0,0,0,0.75);
+  width: 100%
+}
+

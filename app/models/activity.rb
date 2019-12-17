@@ -16,4 +16,7 @@ class Activity < ApplicationRecord
   def set_price
     self.price_cents = initial_price * (1 - (discount * 0.01)) * 100
   end
+
+  def average_reviews
+  end
 end
