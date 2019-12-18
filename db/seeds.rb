@@ -75,10 +75,10 @@ act5= Activity.create(
   deadline: 7,
   photo_url:"https://travelbar.com/wp-content/uploads/2017/05/paella.jpg")
 
-act6= Activity.create(
+act6 = Activity.create(
   title: "Flamenco Night at Tablao Cordobes",
   description: "Watching a flamenco show is a quintessential Barcelona experience and the Tablao Cordobes is one of the city’s most popular venues, located right on the central Las Ramblas boulevard. Enjoy the dazzling performance by professional flamenco dancers and live musicians, or upgrade to include a delicious paella dinner or drinks.",
-  address: "La Rambla, 35, Barcelona",
+  address: "La Rambla, 35, 08002 Barcelona, Spain",
   initial_price: 44,
   discount: 20,
   min_number: 10,
@@ -88,7 +88,7 @@ act6= Activity.create(
   deadline: 4,
   photo_url:"https://www.barcelona-tourist-guide.com/images/int/entertainment/flamenco-tablao-cordobes/L550/flamenco-tablao-cordobes-5341.jpg")
 
-act7= Activity.create(
+act7 = Activity.create(
   title: "Barcelona Half-Day Bike Tour",
   description: "Zip around Barcelona’s sights by bike—an energizing alternative to pounding the sidewalks or traveling by enclosed bus. This half-day bike tour uses easy-to-ride bikes, follows routes that avoid traffic, and features a local guide for the full lowdown on the sights and city’s Culture. The gentle pace, a beach rest break, and child seats on request make it ideal for families and all fitness levels.",
   address: "Plaça de Sant Jaume, 3, Barcelona",
@@ -101,10 +101,10 @@ act7= Activity.create(
   deadline: 3,
   photo_url:"https://cdn.getyourguide.com/img/tour_img-307231-146.jpg")
 
-act8= Activity.create(
+act8 = Activity.create(
   title: "Camp Nou - F.C.Barcelona Open Date Ticket",
   description: "Pre-book your Nou Camp experience in Barcelona so you don’t have to wait in line or rely on a last-minute ticket. Then, on the day, bypass the lines and go straight into the home of FC Barcelona to explore independently. View the changing rooms and other areas, walk through the tunnel, visit the museum, and admire the vast stadium from the pitch, all at your own pace.",
-  address: "Arístides Maillol - Trav. de les Corts, 08028 Barcelona, Spain",
+  address: "C. d'Arístides Maillol, 12, Barcelona",
   initial_price: 35,
   discount: 15,
   min_number: 15,
@@ -117,7 +117,7 @@ act8= Activity.create(
 act9= Activity.create(
   title: "Palau de la Musica Catalana",
   description: "The Palau, an icon of modernist architecture in downtown Barcelona The Palau de la Música Catalana is one of the most representative monuments of the city and It is one of the most recommended tourist attractions of Barcelona. Built between 1905 and 1908 by the great architect Lluis Domènech i Montaner, the Palau de la Música Catalana is an architectural jewel of Catalonia and essential part of any visit to the city, as any of the most fascinating Gaudi buildings. ",
-  address: "C/ Palau de la Música, 4-6, Barcelona",
+  address: "Carrer del Palau de la Música, 4-6,  Barcelona",
   initial_price: 12,
   discount: 10,
   min_number: 10,
@@ -130,7 +130,7 @@ act9= Activity.create(
 act10= Activity.create(
   title: "Maestros de la Guitarra",
   description: "Barcelona's most famous Spanish and flamenco guitar shows. Maestros de la Guitarra is the only festival of its kind in the world. Since 2000, it has produced in Barcelona more than 3000 Concerts for more than one million music lovers from Spain and from all around the globe.",
-  address: "Avinguda Francesc Cambo, 17, Barcelona",
+  address: "Avinguda de Francesc Cambó 17, Barcelona",
   initial_price: 23,
   discount: 15,
   min_number: 10,
@@ -140,10 +140,10 @@ act10= Activity.create(
   deadline: 5,
   photo_url:"https://img.grouponcdn.com/pwa_test/3Fx4UTtGNWCgfQkQLATrmoSucHMt/3F-669x446/v1/c700x420.jpg")
 
-act11= Activity.create(
+act11 = Activity.create(
   title: "Barcelona Improv Group",
   description: "BIG is Barcelona's premiere improvised theatre & comedy company, bringing improv to Barcelona since 2011 with monthly main stage shows, weekly drop in workshops, classes, and integrated professional training. Please check website and Facebook for upcoming shows. BIG also hosts the Barcelona Improv Group International Festival every November.",
-  address: "C/Creu dels Molers 17, Barcelona",
+  address: "Carrer de la Creu dels Molers, 17, Barcelona",
   initial_price: 18,
   discount: 15,
   min_number: 12,
@@ -153,10 +153,10 @@ act11= Activity.create(
   deadline: 3,
   photo_url:"https://barcelonanavigator.com/wp-content/uploads/2019/10/BIGIF6_1-1-MB.jpg")
 
-act12= Activity.create(
+act12 = Activity.create(
   title: "Barcelona y Flamenco",
   description: "Barcelona y Flamenco presents: “Opera y Flamenco” and “Gran Gala Flamenco” In more than 10 years their two principal shows have reached millions of spectators, making them the most seen Flamenco productions in Barcelona. Our show is born from the joining together of well known talented singers and flamenco artists and of the fusion of two passionate European arts. This incredible shows is choreographed by the award winning Rafael Amargo, the most important flamenco artist working today. Opera y Flamenco tells the tormented story of love between the dancers with their souls interpretated by the tenor and soprano.",
-  address: "Palau de la Musica and Poliorama Theater, Barcelona, Spain",
+  address: "Carrer del Palau de la Música, 4-6, Barcelona, Spain",
   initial_price: 40,
   discount: 25,
   min_number: 10,
@@ -182,7 +182,7 @@ act13= Activity.create(
 act14= Activity.create(
   title: "Montefusco Cycling",
   description: "In this private tour our guide will take you to the best roads around the city, including some solitaire roads and demanding climbs. You will have a full carbon bike equipped with Shimano 105 groupset, compact crank 34-50, 11 speed. This is a nice cycling stage and also including the best views over the city! We will adapt the distance and difficulty to your needs. From 60 to 85 km including 3-4 climbs. Also we adapt the pace so you can feel comfortable with it!",
-  address: "Parc d’Atraccions Tibidabo, Pl. del Tibidabo, 3-4, Barcelona",
+  address: "Rambla de Fabra i Puig, 64, Barcelona",
   initial_price: 90,
   discount: 10,
   min_number: 5,
@@ -209,7 +209,7 @@ act16= Activity.create(
   title: "Sunrise Beach Yoga",
   description: "Let´s start the day with some one hour power yoga at Barcelona Beach (for all levels) and share some fruits after practice! You will practice on a concrete platform so you won´t get sandy, and you will have the best ocean view!
 Yoga mats provided.",
-  address: "Playa de la Mar Bella, Av. del Litoral, Barcelona",
+  address: "Avinguda del Litoral, Barcelona",
   initial_price: 25,
   discount: 15,
   min_number: 10,
@@ -219,10 +219,10 @@ Yoga mats provided.",
   deadline: 3,
   photo_url:"https://media-cdn.tripadvisor.com/media/photo-s/18/3b/5f/82/sunrise-beach-yoga.jpg")
 
-act17= Activity.create(
+act17 = Activity.create(
   title: "Yoga By The Sea",
   description: " This yoga class is the perfect way to enjoy some Relaxation in the busy city while also taking in the sites of the beautiful seaside. While the sounds of the waves surround you, we will practice a gentle vinyasa flow designed to leave you feeling relaxed and ready to go with a clear mind. ",
-  address: "Playa de La Barceloneta, Paseo Maritimo Barceloneta, 14, Barcelona",
+  address: "Passeig Maritim, 14, Barcelona",
   initial_price: 15,
   discount: 10,
   min_number: 10,
@@ -235,7 +235,7 @@ act17= Activity.create(
 act18 = Activity.create(
   title: "Art and Wine: Paint and sip in Barcelona",
   description: "I will guide you throughout the class so you can enjoy a few hours in a relaxing and joyful environment. You do not need previous experience or to bring any material, I will prepare even the smallest detail. You will be surprised about what you can express and the beautiful result you will get in just 2 hours and half.",
-  address: "Gracia, Gracia, Barcelona",
+  address: "Carrer de la Mare de Déu dels Desemparats, 14, Barcelona",
   initial_price: 40,
   discount: 20,
   min_number: 5,
