@@ -85,7 +85,7 @@
                 <% end %>
             <div class="activity-pricing">
               <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
-              <h5 class="new-price"> <%= humanized_money_with_symbol(activity.price) %> </h5>
+              <h5 class="new-price"> <%= humanized_money(activity.price) %>€ </h5>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ You joined a new group!
 
       <div class="infos d-flex align-items-center mb-2">
         <i class="fas fa-coins symbol"></i>
-        <p style="margin: 0;"> <%= humanized_money_with_symbol(@booking.group.activity.price)%> / person</p>
+        <p style="margin: 0;"> <%= humanized_money(@booking.group.activity.price)%>€ / person</p>
       </div>
 
       <div class="infos d-flex align-items-center mb-2">
