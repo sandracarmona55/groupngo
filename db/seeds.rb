@@ -250,7 +250,34 @@ puts Activity.count
 
 Group.delete_all
 
-Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act1.id)
+#-------------------------------------------------------------------------------
+
+group1 = Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act1.id)
+
+booking1 = Booking.create(
+  group_id: group1.id,
+  user_id: 1,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 1)
+
+Review.create(
+  title: "Breathtaking",
+  content: "It's amazing to see and the architecture is amazing. The pictures display more vivid colours, but don't they all. The different light between morning and evening on both sides of the Basilica is well worth the visit, and so is everything else",
+  rating: 5,
+  booking_id: booking1.id)
+
+#-------------------------------------------------------------------------------
+
+group2 = Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act1.id)
+
+booking2 = Booking.create(
+  group_id: group2.id,
+  user_id: 1,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
+  quantity: 1)
+
 Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act1.id)
@@ -269,9 +296,24 @@ Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act1.id)
 
+Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,25,15,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,25,18,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,26,11,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,26,15,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,26,18,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,27,11,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,27,15,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,27,18,30,00), activity_id: act2.id)
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act2.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act2.id)
 Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act2.id)
+Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act2.id)
 
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act3.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act3.id)
@@ -339,3 +381,9 @@ Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act18.id)
 
 puts "Groups : "
 puts Group.count
+
+puts "Bookings : "
+puts Booking.count
+
+puts "Reviews : "
+puts Review.count
