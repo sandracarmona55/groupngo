@@ -31,7 +31,7 @@ const join = document.getElementById('join-btn');
       const targetId = event.currentTarget.dataset.checkId
       const checkButton = document.getElementById(`check-g-${targetId}`)
 
-      // checkButton.click()
+      checkButton.click()
       join.classList.add('join-group-selected')
       join.disabled = false
       const spots = checkButton.dataset.spots
