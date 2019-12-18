@@ -30,6 +30,13 @@ class Group < ApplicationRecord
     # ((self.date - DateTime.now) / 86400).round
     (((self.date - DateTime.now) / 86400).round) - self.activity.deadline
   end
+
+  def complete!
+    if self.spots == "full"
+      self.completed = true
+      self.save
+    end
+  end
 end
 
 
