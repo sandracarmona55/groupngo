@@ -10,8 +10,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% @bookings = Booking.where(user_id: current_user.id, paid_status: false) %>
       <% if user_signed_in? %>
+      <% @bookings = Booking.where(user_id: current_user.id, paid_status: false) %>
         <li class="nav-item">
           <%= link_to "My groups", bookings_index_path, class: "nav-link" %>
         </li>
