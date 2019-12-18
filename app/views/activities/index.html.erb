@@ -21,8 +21,10 @@
       <p>Price</p>
     </div>
     <div class="dropdown-menu">
-      <%= form_tag activities_path(price:params[:price], query:params[:query], category:params[:category]), method: :get do %>
-        <%= text_field_tag :price, params[:price], placeholder: "Max price"%>
+      <%= form_tag activities_path, method: :get do %>
+        <%= number_field_tag(:price, in: 10.0..100.0, step: 5)%>
+        <%= hidden_field_tag(:category, params[:category]) %>
+        <%= hidden_field_tag(:query, params[:query]) %>
         <% submit_tag %>
       <% end %>
     </div>
@@ -36,9 +38,8 @@
 
 <div class="index-title">
   <% if params[:query].present? %>
-    <h4 class="results-title"><%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
-  <% elsif params[:category].present? %>
-    <h4 class="results-title"><%= pluralize @activities.size, "activity" %> for <%= params[:category] %></h4>
+    <h4 class="results-title">
+      <%= pluralize @activities.size, "activity" %> in <%= params[:query] %></h4>
   <% else %>
     <h4 class="results-title"><%= pluralize @activities.size, "activity" %> </h4>
   <% end %>
