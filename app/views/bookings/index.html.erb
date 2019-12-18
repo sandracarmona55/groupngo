@@ -9,94 +9,122 @@ My groups
     <button class="activity-btn" id="btn-past" >Past</button>
   </div>
 
+<!-- DISPLAY GROUPS PENDING -->
 
   <div class="activity-cards" id="pending">
-    <br>
-    <% if @bookings_paid.count > 0 %>
-      <div class="infos-group">These activities are still pending, go to checkout to pay and valid them</div>
-    <% else %>
-      <div class="infos-group">You don't have any confirmed activities yet!</div>
-    <% end %>
-    <br>
+<!-- DISPLAY GROUPS PAID BUT NOT FILLED YET -->
+    <% if @bookings_pending.count > 0 %>
+      <br>
+      <div class="infos-group">These activities are still pending, groups are not filled yet!</div>
+      <br>
 
-    <% @bookings_pending.each do |booking| %>
-    <div class="row day-card d-flex">
-      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
-        <div>
-          <div><%= booking.group.date.strftime("%b")  %> </div>
-          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+      <% @bookings_pending.each do |booking| %>
+        <div class="row day-card d-flex">
+          <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+            <div>
+              <div><%= booking.group.date.strftime("%b")  %> </div>
+              <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+            </div>
+          </div>
+          <div class="col-10 group-infos">
+            <div class="group-title"><%=booking.group.activity.title%></div>
+            <div class="hour-price d-flex justify-content-between">
+              <div><%= booking.group.date.strftime("%H:%M")  %></div>
+              <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+            </div>
+            <div class="infos-group"><em><%= booking.group.spots %> people still need to join this group!</em></div>
+          </div>
         </div>
-      </div>
-      <div class="col-10 group-infos">
-        <div class="group-title"><%=booking.group.activity.title%></div>
-        <div class="hour-price d-flex justify-content-between">
-          <div><%= booking.group.date.strftime("%H:%M")  %></div>
-          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
-        </div>
-        <div class="infos-group"><em><%= booking.group.spots %> people still need to join your group!</em></div>
-      </div>
-      </div>
+      <% end %>
     <% end %>
 
-    <br>
-    <div class="text-center" style="margin-top: 40px">
-    <%= link_to "GO TO CHECKOUT", checkout_path, class:"join-group-selected go-to-checkout" %>
-    </div>
+<!-- DISPLAY GROUPS NOT PAID AND NOT FILLED YET -->
+    <% if @bookings_to_pay.count > 0 %>
+      <br>
+      <div class="infos-group" style="border-top: 1px solid grey; padding-top: 20px">These activities are still in your cart, go to <%= link_to "checkout", checkout_path %> to pay for them in order to reserve your spot.</div>
+      <br>
+
+      <% @bookings_to_pay.each do |booking| %>
+        <div class="row day-card d-flex">
+          <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+            <div>
+              <div><%= booking.group.date.strftime("%b")  %> </div>
+              <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+            </div>
+          </div>
+          <div class="col-10 group-infos">
+            <div class="group-title"><%=booking.group.activity.title%></div>
+            <div class="hour-price d-flex justify-content-between">
+              <div><%= booking.group.date.strftime("%H:%M")  %></div>
+              <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+            </div>
+            <div class="infos-group"><em><%= booking.group.days_left %> day left to pay for this activity!</em></div>
+            <div class="infos-group"><em><%= booking.group.spots %> people still need to join this group!</em></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
+
+<!-- DISPLAY GROUPS PAID AND FILLED UPCOMING -->
 
   <div class="activity-cards" id="paid">
-    <br>
-    <% if @bookings_paid.count > 0 %>
-      <div class="infos-group">These activities are confirmed! Look forward to have your feedback!</div>
-    <% else %>
-      <div class="infos-group">You don't have any confirmed activities yet!</div>
+    <% if @bookings_confirmed.count > 0 %>
+      <br>
+      <div class="infos-group">Here are your upcoming groups!</div>
+      <br>
+    <% @bookings_confirmed.each do |booking| %>
+      <div class="row day-card d-flex">
+        <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+          <div>
+            <div><%= booking.group.date.strftime("%b")  %> </div>
+            <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+          </div>
+        </div>
+        <div class="col-10 group-infos">
+          <div class="group-title"><%=booking.group.activity.title%></div>
+          <div class="hour-price d-flex justify-content-between">
+            <div><%= booking.group.date.strftime("%H:%M")  %></div>
+            <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+          </div>
+        </div>
+      </div>
     <% end %>
-    <br>
-
-    <% @bookings_paid.each do |booking| %>
-    <div class="row day-card d-flex">
-      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
-        <div>
-          <div><%= booking.group.date.strftime("%b")  %> </div>
-          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
-        </div>
-      </div>
-      <div class="col-10 group-infos">
-        <div class="group-title"><%=booking.group.activity.title%></div>
-        <div class="hour-price d-flex justify-content-between">
-          <div><%= booking.group.date.strftime("%H:%M")  %></div>
-          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
-        </div>
-      </div>
-      </div>
+    <% else %>
+      <br>
+        <div class="infos-group">You don't have any confirmed group yet.</div>
+      <br>
     <% end %>
   </div>
 
-  <div class="activity-cards" id="past">
-    <br>
-    <% if @bookings_past.count > 0 %>
-      <div class="infos-group">Here are the activities you've done, don't hesitate to leave a review!</div>
-    <% else %>
-      <div class="infos-group">You didn't enjoy any activity yet!</div>
-    <% end %>
-    <br>
+<!-- DISPLAY GROUPS PAID AND FILLED PAST -->
 
-    <% @bookings_paid.each do |booking| %>
-    <div class="row day-card d-flex">
-      <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
-        <div>
-          <div><%= booking.group.date.strftime("%b")  %> </div>
-          <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+  <div class="activity-cards" id="past">
+    <% if @bookings_past.count > 0 %>
+      <br>
+      <div class="infos-group">Here are your past groups, don't hesitate to leave a review!</div>
+      <br>
+      <% @bookings_past.each do |booking| %>
+        <div class="row day-card d-flex">
+          <div class="col-2 day booking-day d-flex align-items-center justify-content-center">
+            <div>
+              <div><%= booking.group.date.strftime("%b")  %> </div>
+              <div id="day-orange"><%= booking.group.date.strftime("%d")%> </div>
+            </div>
+          </div>
+          <div class="col-10 group-infos">
+            <div class="group-title"><%=booking.group.activity.title%></div>
+            <div class="hour-price d-flex justify-content-between">
+              <div><%= booking.group.date.strftime("%H:%M")  %></div>
+              <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-10 group-infos">
-        <div class="group-title"><%=booking.group.activity.title%></div>
-        <div class="hour-price d-flex justify-content-between">
-          <div><%= booking.group.date.strftime("%H:%M")  %></div>
-          <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
-        </div>
-      </div>
-      </div>
+      <% end %>
+    <% else %>
+      <br>
+        <div class="infos-group">You don't have any past group yet.</div>
+      <br>
     <% end %>
   </div>
 </div>
