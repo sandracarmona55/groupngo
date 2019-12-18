@@ -118,7 +118,7 @@
                   </div>
                 <% else %>
                   <div class="time-each" data-check-id='<%= g.id %>'>
-                    <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}" %>
+                    <%= b.radio_button :group, g.id, id: "time radio-button", :checked => true, hidden: :true,  id: "check-g-#{g.id}", data: { spots: g.spots } %>
                     <%= label :group, g.date.strftime("%H:%M"), id: "time-button"%>
                   </div>
                 <% end %>
