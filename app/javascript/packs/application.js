@@ -10,9 +10,11 @@ import { cards } from './cards';
 import { categories } from './cards';
 import { groups } from './groups';
 
+
 initStarRating();
 initMapbox();
 openTab();
 groups();
 cards();
 categories();
+
