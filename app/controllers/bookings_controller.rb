@@ -67,7 +67,7 @@ class BookingsController < ApplicationController
 
     @bookings_paid.each do |booking|
       if booking.group.completed == true && booking.group.date >= DateTime.now
-        @booking_confirmed << booking
+        @bookings_confirmed << booking
       elsif booking.group.completed == true && booking.group.date < DateTime.now
         @bookings_past << booking
       elsif booking.group.completed == false && booking.group.date >= DateTime.now
