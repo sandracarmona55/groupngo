@@ -58,9 +58,28 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
-    @bookings_pending = @bookings.where(paid_status: false)
+    @bookings_not_paid = @bookings.where(paid_status: false)
     @bookings_paid = @bookings.where(paid_status: true)
-    @bookings_past = @bookings.where(paid_status: true)
+    @bookings_pending = []
+    @bookings_to_pay = []
+    @bookings_confirmed = []
+    @bookings_past = []
+
+    @bookings_paid.each do |booking|
+      if booking.group.completed == true && booking.group.date >= DateTime.now
+        @booking_confirmed << booking
+      elsif booking.group.completed == true && booking.group.date < DateTime.now
+        @bookings_past << booking
+      elsif booking.group.completed == false && booking.group.date >= DateTime.now
+        @bookings_pending << booking
+      end
+    end
+
+    @bookings_not_paid.each do |booking|
+      if booking.group.completed == false && booking.group.date >= DateTime.now && booking.group.days_left.positive?
+        @bookings_to_pay << booking
+      end
+    end
   end
 
   private
