@@ -21,6 +21,7 @@
 <div class="container">
 
   <div class="row categories-all" style="margin-right: -6px; margin-left:  -6px; margin-top: 20px; margin-bottom: 20px;">
+
     <div class="col-4 p-1">
       <%= link_to activities_path(category:'Culture') do %>
         <div class="card-categories">
@@ -88,7 +89,7 @@
           <h3 class="activity-title"><%=activity.title%></h3>
           <div class="activity-pricing">
             <h5 class="initial-price"> <%= activity.initial_price %>€ </h5>
-            <h5 class="new-price"> <%= humanized_money_with_symbol(activity.price) %> </h5>
+            <h5 class="new-price"> <%= humanized_money(activity.price) %>€ </h5>
           </div>
         </div>
       </div>

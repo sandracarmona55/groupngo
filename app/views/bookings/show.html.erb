@@ -3,7 +3,7 @@ You joined a new group!
 </div>
 <br>
 <div class="container">
-  <div class="group-title">
+  <div>
     <p>Congrats <% @booking.user.name %>! You booked <strong> <%= @booking.group.activity.title %></strong>!
     <br>
     <br>
@@ -23,7 +23,7 @@ You joined a new group!
 
       <div class="infos d-flex align-items-center mb-2">
         <i class="fas fa-coins symbol"></i>
-        <p style="margin: 0;"> <%= humanized_money_with_symbol(@booking.group.activity.price)%> / person</p>
+        <p style="margin: 0;"> <%= humanized_money(@booking.group.activity.price)%>€ / person</p>
       </div>
 
       <div class="infos d-flex align-items-center mb-2">
@@ -34,7 +34,8 @@ You joined a new group!
 
     <br>
     <% if @booking.group.completed == false %></p>
-      <p class="info-activity-completed">The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity! You can check the updates in <strong><%= link_to "My Groups", bookings_index_path, class:"no-link" %></strong>.</p>
+      <p class="info-activity-completed">The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity!</p>
+      <p class="info-activity-completed">You will be able to check the updates after payment in your profile - My groups.</p>
     <% else %>
       The group is full! The activity is confirmed
     <% end %>
