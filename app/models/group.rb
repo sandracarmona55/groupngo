@@ -31,3 +31,5 @@ class Group < ApplicationRecord
     (((self.date - DateTime.now) / 86400).round) - self.activity.deadline
   end
 end
+
+
