@@ -1,7 +1,11 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @activities = Activity.in_city(params[:query]).in_category(params[:category]).under_price(params[:price])
+    if params[:price].present? && (params[:price] != 0)
+      @activities = Activity.in_city(params[:query]).in_category(params[:category]).under_price(params[:price].to_i)
+    else
+      @activities = Activity.in_city(params[:query]).in_category(params[:category])
+    end
   end
 
   def show
