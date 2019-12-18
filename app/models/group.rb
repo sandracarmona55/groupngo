@@ -12,6 +12,8 @@ class Group < ApplicationRecord
     end
       if total_quantity >= self.activity.min_number
         return "full"
+        self.completed = true
+        self.save
       else
         difference = self.activity.min_number - total_quantity
         return difference
@@ -29,3 +31,5 @@ class Group < ApplicationRecord
     (((self.date - DateTime.now) / 86400).round) - self.activity.deadline
   end
 end
+
+

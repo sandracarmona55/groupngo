@@ -30,8 +30,11 @@ class BookingsController < ApplicationController
   end
 
   def checkout
-    @total_price = 0
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
+    if @bookings.count < 1
+      redirect_to activities_path
+    end
+    @total_price = 0
     @bookings.each do |booking|
       @total_price += ((booking.group.activity.price_cents * booking.quantity) / 100)
     end

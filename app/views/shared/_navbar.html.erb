@@ -15,9 +15,11 @@
         <li class="nav-item">
           <%= link_to "My groups", bookings_index_path, class: "nav-link" %>
         </li>
+        <% if @bookings.count > 0 %>
         <li class="nav-item">
           <%= link_to "My cart (#{@bookings.count})", checkout_path, class: "nav-link" %>
         </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
