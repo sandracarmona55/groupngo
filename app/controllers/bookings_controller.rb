@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @bookings = Booking.where(user_id: current_user.id, paid_status: false)
     @booking = Booking.find(params[:id])
     @group = @booking.group
     @activity = @group.activity
@@ -26,14 +27,15 @@ class BookingsController < ApplicationController
       @group.completed = false
     end
     @group.save
-    redirect_to checkout_path
+    if @bookings.count < 1
+      redirect_to activities_path
+    else
+      redirect_to checkout_path
+    end
   end
 
   def checkout
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
-    if @bookings.count < 1
-      redirect_to activities_path
-    end
     @total_price = 0
     @bookings.each do |booking|
       @total_price += ((booking.group.activity.price_cents * booking.quantity) / 100)
