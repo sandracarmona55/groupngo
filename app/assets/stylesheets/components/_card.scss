@@ -32,6 +32,10 @@ a {
     object-fit: cover;
   }
 
+  &.hover-card {
+    border: 2px solid gainsboro;
+  }
+
   //.far {
     //color: #FD894A;
    // padding: -20px;

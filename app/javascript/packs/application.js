@@ -6,9 +6,13 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initStarRating } from '../plugins/init_star_rating';
 
 import { openTab } from './show';
+import { cards } from './cards';
+import { categories } from './cards';
 import { groups } from './groups';
 
 initStarRating();
 initMapbox();
 openTab();
 groups();
+cards();
+categories();

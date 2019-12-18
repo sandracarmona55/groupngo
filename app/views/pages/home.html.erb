@@ -20,7 +20,8 @@
 
 <div class="container">
 
-  <div class="row categories-all" style="margin-right: -6px; margin-left:  -6px; margin-top: 15px;">
+  <div class="row categories-all" style="margin-right: -6px; margin-left:  -6px; margin-top: 20px; margin-bottom: 20px;">
+
     <div class="col-4 p-1">
       <%= link_to activities_path(category:'Culture') do %>
         <div class="card-categories">
@@ -78,7 +79,7 @@
     </div>
   </div>
 
-  <h2 class="titles">Recommendations</h2>
+  <h3 class="show-subtitle">Recommendations</h3>
   <% @activities = Activity.last(5) %>
   <% @activities.each do |activity| %>
     <a class="link-none" href="<%= activity_path(activity) %>">
