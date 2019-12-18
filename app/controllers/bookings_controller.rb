@@ -30,8 +30,11 @@ class BookingsController < ApplicationController
   end
 
   def checkout
-    @total_price = 0
     @bookings = Booking.where(user_id: current_user.id, paid_status: false)
+    if @bookings.count < 1
+      redirect_to activities_path
+    end
+    @total_price = 0
     @bookings.each do |booking|
       @total_price += ((booking.group.activity.price_cents * booking.quantity) / 100)
     end
@@ -58,9 +61,21 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
-    @bookings_pending = @bookings.where(paid_status: false)
+    @bookings_not_paid = @bookings.where(paid_status: false)
     @bookings_paid = @bookings.where(paid_status: true)
-    @bookings_past = @bookings.where(paid_status: true)
+    @bookings_pending = []
+    @bookings_confirmed = []
+    @bookings_past = []
+
+    @bookings_paid.each do |booking|
+      if booking.group.completed == true && booking.group.date >= DateTime.now
+        @bookings_confirmed << booking
+      elsif booking.group.completed == true && booking.group.date < DateTime.now
+        @bookings_past << booking
+      elsif booking.group.completed == false && booking.group.date >= DateTime.now
+        @bookings_pending << booking
+      end
+    end
   end
 
   private

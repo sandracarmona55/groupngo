@@ -6,10 +6,14 @@ class Group < ApplicationRecord
   def spots
     total_quantity = 0
     self.bookings.each do |booking|
-      total_quantity += booking.quantity
+      if booking.paid_status == true
+        total_quantity += booking.quantity
+      end
     end
       if total_quantity >= self.activity.min_number
-          return "full"
+        return "full"
+        self.completed = true
+        self.save
       else
         difference = self.activity.min_number - total_quantity
         return difference
@@ -27,3 +31,5 @@ class Group < ApplicationRecord
     (((self.date - DateTime.now) / 86400).round) - self.activity.deadline
   end
 end
+
+

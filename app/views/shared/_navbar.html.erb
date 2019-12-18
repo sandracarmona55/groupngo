@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%#= image_tag "LogoMakr_694UCz.png" %>
-    <%= image_tag "LogoMakr_6kz1RK.png" %>
+    <div class="logo" style="font-size: 16px"><%= image_tag "groupngo_logo.png" %><strong>Groupngo</strong></div>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,12 +10,18 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <% @bookings = Booking.where(user_id: current_user.id, paid_status: false) %>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "My groups", bookings_index_path, class: "nav-link" %>
+        </li>
+        <% if @bookings.count > 0 %>
+        <li class="nav-item">
+          <%= link_to "My cart (#{@bookings.count})", checkout_path, class: "nav-link" %>
+        </li>
+        <% end %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
         <li class="nav-item">
