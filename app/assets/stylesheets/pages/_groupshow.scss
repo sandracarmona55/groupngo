@@ -3,7 +3,7 @@
   color: grey;
 }
 
-.go-to-checkout {
+a.go-to-checkout {
   width: 100%;
   background-color: #FD894A;
   color: white;
@@ -11,15 +11,8 @@
   border-radius: 4px;
   padding: 10px 101px;
   text-align: center;
-  a {
-    text-decoration: none;
-    color: white;
-    &:hover {
-      text-decoration: none;
-      color: white;
-    }
-  }
 }
+
 
 .no-link {
   text-decoration: none;
