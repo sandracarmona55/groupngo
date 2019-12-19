@@ -674,6 +674,36 @@ Review.create(
   rating: 2,
   booking_id: booking23.id)
 
+#-------------------------------------------------------------------------------
+#BOOKINGS IN THE PAST WITH USER-ID: 10 TO SHOWCASE IN THE PRESENTATION
+
+group24 = Group.create(date: DateTime.new(2019,12,12,11,30,00), activity_id: act1.id)
+
+booking24 = Booking.create(
+  group_id: group24.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+group25 = Group.create(date: DateTime.new(2019,11,15,11,30,00), activity_id: act8.id)
+
+booking25 = Booking.create(
+  group_id: group25.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+group26 = Group.create(date: DateTime.new(2019,10,24,15,30,00), activity_id: act13.id)
+
+booking26 = Booking.create(
+  group_id: group26.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
 
 #-------------------------------------------------------------------------------
 #FUTURE GROUPS
