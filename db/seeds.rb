@@ -6,6 +6,7 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 
+Review.delete_all
 Booking.delete_all
 Group.delete_all
 Activity.delete_all
@@ -248,35 +249,35 @@ act18 = Activity.create(
 puts "Activities : "
 puts Activity.count
 
-Group.delete_all
 
 #-------------------------------------------------------------------------------
 
-group1 = Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act1.id)
-
+group1 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act1.id)
 booking1 = Booking.create(
   group_id: group1.id,
   user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
-  quantity: 1)
-
+  quantity: 10)
 Review.create(
   title: "Breathtaking",
   content: "It's amazing to see and the architecture is amazing. The pictures display more vivid colours, but don't they all. The different light between morning and evening on both sides of the Basilica is well worth the visit, and so is everything else",
   rating: 5,
   booking_id: booking1.id)
-
 #-------------------------------------------------------------------------------
-
-group2 = Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act1.id)
-
+group2 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act1.id)
 booking2 = Booking.create(
   group_id: group2.id,
   user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
-  quantity: 1)
+  quantity: 10)
+Review.create(
+  title: "Amazing place, boring audio guide",
+  content: "Impressive piece of architecture, very interesting to see. However, we used the audio guide, which was available in our language, but the guide was a bit boring in my opinion, it tried to guide you where to look but it was very difficult to find sometimes, and the guide would just go on. I also had to replace my guide because the first one didn’t work.",
+  rating: 3,
+  booking_id: booking2.id)
+
 
 Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act1.id)

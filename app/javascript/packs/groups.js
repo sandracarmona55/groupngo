@@ -1,19 +1,19 @@
 // const time = document.querySelectorAll(".time-each");
 // console.log(time);
-const insertOptions = (spots) => {  // spots is an integer!
-  const bookingOptions = document.getElementById('booking_quantity')
-  bookingOptions.innerHTML = '' // clear the content
-  spots = Number(spots)
+// const insertOptions = (spots) => {  // spots is an integer!
+//   const bookingOptions = document.getElementById('counter')
+//   bookingOptions.innerHTML = '' // clear the content
+//   spots = Number(spots)
 
-  for (let s = 1; s < (spots + 1); s++) {
-    const choose_spot = document.getElementById('booking_quantity')
-    choose_spot.insertAdjacentHTML("beforeend", `<option value="${s}">${s}</option>`);
-  }
+//   for (let s = 1; s < (spots + 1); s++) {
+//     const choose_spot = document.getElementById('counter')
+//     choose_spot.insertAdjacentHTML("beforeend", `<option value="${s}">${s}</option>`);
+//   }
 
-  // spots times do
-  // interpolationnn
-  // end
-};
+//   // spots times do
+//   // interpolationnn
+//   // end
+// };
 
 const groups = () => {
 
@@ -36,7 +36,7 @@ const join = document.getElementById('join-btn');
       join.disabled = false
       const spots = checkButton.dataset.spots
 
-      insertOptions(spots);
+      // insertOptions(spots);
     })
   })
 };
