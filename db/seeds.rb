@@ -252,31 +252,459 @@ puts Activity.count
 
 #-------------------------------------------------------------------------------
 
+#SAGRADA
+
 group1 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act1.id)
 booking1 = Booking.create(
   group_id: group1.id,
-  user_id: 1,
+  user_id: 2,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
+
 Review.create(
   title: "Breathtaking",
   content: "It's amazing to see and the architecture is amazing. The pictures display more vivid colours, but don't they all. The different light between morning and evening on both sides of the Basilica is well worth the visit, and so is everything else",
   rating: 5,
   booking_id: booking1.id)
-#-------------------------------------------------------------------------------
+
+
 group2 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act1.id)
 booking2 = Booking.create(
   group_id: group2.id,
-  user_id: 1,
+  user_id: 2,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
   quantity: 10)
+
 Review.create(
   title: "Amazing place, boring audio guide",
   content: "Impressive piece of architecture, very interesting to see. However, we used the audio guide, which was available in our language, but the guide was a bit boring in my opinion, it tried to guide you where to look but it was very difficult to find sometimes, and the guide would just go on. I also had to replace my guide because the first one didn’t work.",
   rating: 3,
   booking_id: booking2.id)
+
+
+group3 = Group.create(date: DateTime.new(2019,11,27,15,30,00), activity_id: act1.id)
+
+booking3 = Booking.create(
+  group_id: group3.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Absolutely Amazing",
+  content: "If you visit anywhere in Barcelona, visit here. Every member of the family were transfixed! We visited on the last day of our weekend trip, having bought tickets earlier online for an audio tour including a trip up one of the towers. The audio headphones told us everything we needed to know so very happy not to have paid extra for a more involved tour.
+Spectacular place, leave about 2 or 3 hours to relax and enjoy!",
+  rating: 5,
+  booking_id: booking3.id)
+
+#-------------------------------------------------------------------------------
+
+#GAUDI
+
+group4 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act2.id)
+
+booking4 = Booking.create(
+  group_id: group4.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+Review.create(
+  title: "Blown away",
+  content: "We expected it to be amazing but we were BLOWN AWAY. The audio guide was incredible where you receive a mobile phone which adds furniture, etc into every room with all it's info. SO interesting and SO beautiful. Highly recommend it",
+  rating: 5,
+  booking_id: booking4.id)
+
+
+group5 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act2.id)
+
+booking5 = Booking.create(
+  group_id: group5.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
+  quantity: 15)
+
+Review.create(
+  title: "Amazing place",
+  content: "I have never seen anything else comparable to this! It isn't only that Gaudi envisioned this, but that he was able to have it built according to his vision. The Smart Guide is also amazing--not only a narrative, but video overlays of what the home looked like when it was occupied.",
+  rating: 3,
+  booking_id: booking5.id)
+
+
+group6 = Group.create(date: DateTime.new(2019,11,27,15,30,00), activity_id: act2.id)
+
+booking6 = Booking.create(
+  group_id: group6.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+Review.create(
+  title: "Beautiful colours",
+  content: "The interior of Casa Battlo is fascinating. The way in which Gaudí uses colour, light and shape are very impressive. The front facade is very eye catching and unusual. The rooftop is distinctive but not as large as Casa Mila.
+It’s not cheap but it is worth a visit, although we enjoyed a longer visit at Casa Mila.",
+  rating: 5,
+  booking_id: booking6.id)
+
+#-------------------------------------------------------------------------------
+
+#BUS TOUR
+
+group7 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act3.id)
+
+booking7 = Booking.create(
+  group_id: group7.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Standard Hop on Hop Off experience",
+  content: "The bus was fine and seemed to go everywhere you would want to see. Two things to keep in mind - buying early didn’t save me any money and it locked me into a day so I probably wouldn’t do that again and two the directions they give you as to where to meet are non existent which was a frustrating way to start the holiday.",
+  rating: 3,
+  booking_id: booking7.id)
+
+
+group8 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act3.id)
+
+booking8 = Booking.create(
+  group_id: group8.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
+  quantity: 10)
+
+Review.create(
+  title: "Good Way to See Barcelona",
+  content: "On a rainy day, we decided it would be a good option to take the Hop-On-Hop-Off city tour. We had already seen most of the main attractions so since it was raining, we just stayed on the bus through its entire route. We ended up passing things we hadn't seen before and we enjoyed the ride. About halfway through, we moved down to the inside level where it was warmer and drier. It's probably a good way to hop off and see the main attractions and then hop back on. The maps they offer are good.",
+  rating: 3,
+  booking_id: booking8.id)
+
+#-------------------------------------------------------------------------------
+
+#Montserat
+
+group9 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act4.id)
+
+booking9 = Booking.create(
+  group_id: group9.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+Review.create(
+  title: "Montserrat Monastery and Gourmet Wine Tasting.",
+  content: "A great tour lasting the whole day. Aurora was a great guide as she was very informative and had a great sense of humour. A very proud ambassador for the Catalan region of Spain. The choir's performance in the Monastery was magical given the location and history of the locale. We had never sampled any Spanish wines prior to this trip but were by no means disappointed. A few more samples would have been nice... Castlexperience gets a thumps up",
+  rating: 5,
+  booking_id: booking9.id)
+
+#-------------------------------------------------------------------------------
+
+#Spanish Cooking
+
+group10 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act5.id)
+
+booking10 = Booking.create(
+  group_id: group10.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 8)
+
+Review.create(
+  title: "One of the best parts of my trip!",
+  content: "First, I want to say how amazing our instructor, Mara, was. She made the experience so much fun! She was informative and funny. I don’t think the experience would’ve been as great if we had anybody else. I did this as a solo traveler and met a great group that night. Mara made sure to give us all tasks along the way in the cooking of the paella and making of sangria. And while in Barcelona, it was one of the best things I made. If you like to cook and learn local dishes, this is a great experience. And if you can, try to do it when Mara is teaching!",
+  rating: 5,
+  booking_id: booking10.id)
+
+#-------------------------------------------------------------------------------
+
+#Flamenco Night at Tablao Cordobes
+
+group11 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act6.id)
+
+booking11 = Booking.create(
+  group_id: group11.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Great dinner and good experience",
+  content: "We chose the dinner and show and pleasantly surprised how good the buffet was. The show was a bit long however and not exactly what we expected. I thought Flamingo was sensual but it seemed loud and angry. All in all though, a good authentic experience.",
+  rating: 4,
+  booking_id: booking11.id)
+
+#-------------------------------------------------------------------------------
+
+#Barcelona Half-Day Bike Tour
+
+group12 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act7.id)
+
+booking12 = Booking.create(
+  group_id: group12.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Biking Barcelona!",
+  content: "If you are unsure the best way to see lots of sights in Barcelona, the bike tour is for you! Our guide Emi was knowledgeable, passionate about Barcelona, and helpful with suggestions for dining, etc. we would highly recommend this tour!",
+  rating: 5,
+  booking_id: booking12.id)
+
+#-------------------------------------------------------------------------------
+
+#Camp Nou - F.C.Barcelona Open Date Ticket
+
+group13 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act8.id)
+
+booking13 = Booking.create(
+  group_id: group13.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+Review.create(
+  title: "Camp Nou",
+  content: "We went to visit Camp Nou and we saw a lot of Barcelona’s history and all the trophies that they’ve won, not only football but also basketball and many other sports. The only inconvenience is that it requires a lot of walking. I would recommend to take the tour guide free.",
+  rating: 4,
+  booking_id: booking13.id)
+
+#-------------------------------------------------------------------------------
+
+#Palau de la Musica Catalana
+
+group14 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act9.id)
+
+booking14 = Booking.create(
+  group_id: group14.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Nice tour and beautiful decor",
+  content: "My husband and I attended the English tour. Starts with a short video in one of the auditoriums, then tour guide walks you through the building while explaining the meaning of the architecture and design.",
+  rating: 4,
+  booking_id: booking14.id)
+
+#-------------------------------------------------------------------------------
+
+#Maestros de la Guitarra
+
+group15 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act10.id)
+
+booking15 = Booking.create(
+  group_id: group15.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Great show!!",
+  content: "The venue is the best in Barcelona, you must see the inside. The show is fantastic, It is definitely much more than just a touristic show. Experienced musicians, fantastic dancers and good quaily of Flamenco music. It takes 1- 1,5 hours.",
+  rating: 5,
+  booking_id: booking15.id)
+
+#-------------------------------------------------------------------------------
+
+#Barcelona Improv Group
+
+group16 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act11.id)
+
+booking16 = Booking.create(
+  group_id: group16.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Overdose of Talent & Fun",
+  content: "I've been to 2 shows so far and I just love those guys! It's incredible how talented they are and how fast they change their roles! For me, it's so much cooler that they improvise literally everything compared to plays based on written scripts! If you have a sense of humour, get ready to split your sides :))))",
+  rating: 5,
+  booking_id: booking16.id)
+
+#-------------------------------------------------------------------------------
+
+#Barcelona y Flamenco
+
+group17 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act12.id)
+
+booking17 = Booking.create(
+  group_id: group17.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Good show but not all seats are good",
+  content: "Enjoyed what of the show I could see, but many of the seats did not have a good view (many people standing or moving further over to try and see better). When booking, have the website select the best seats for you as they aren't always evident.",
+  rating: 3,
+  booking_id: booking17.id)
+
+#-------------------------------------------------------------------------------
+
+#Barcelona Sailboats tour
+
+group18 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act13.id)
+
+booking18 = Booking.create(
+  group_id: group18.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Amazing sailing trip, but too short",
+  content: "My sister and I took this cruise on our first evening in Barcelona and it remained our favorite part of the entire vacation! It was extremely relaxing and a beautiful way to kick off a trip! I will also say, given how long the cruise is (1.5-2 hours), you certainly get your money's worth. The saxophonist was incredible and plenty of wine/drinks were available for purchase. I would definitely recommend!",
+  rating: 4,
+  booking_id: booking18.id)
+
+#-------------------------------------------------------------------------------
+
+#Montefusco Cycling
+
+group19 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act14.id)
+
+booking19 = Booking.create(
+  group_id: group19.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 5)
+
+Review.create(
+  title: "Nice Bike Tour with Claudio",
+  content: "We were in Barcelona visiting our son and wanted to do a ride around the city. The weather was not cooperating, but Claudio was able to get us out on a great ride. We were able to get some great views, some good climbs and a couple of hours of great riding in beating the rain! We would definitely ride with Claudio again. Claudio is very knowledgable and accommodating! Great day.",
+  rating: 4,
+  booking_id: booking19.id)
+
+#-------------------------------------------------------------------------------
+
+#Running Tours Barcelona
+
+group20 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act15.id)
+
+booking20 = Booking.create(
+  group_id: group20.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 5)
+
+Review.create(
+  title: "The best running experience!!",
+  content: "If you are looking to stay fit, run Barcelona streets and have a great time, Oriol is the prefect choice! We ran almost 8 miles and while running Oriol shared his knowledge on Barcelona history, we ran by iconic Gaudí buildings, we went to El Gòtic and finished with a 360 panoramic view of Barcelona! Me and one of the other runners we’re celebrating our birthday and had a surprise for us! He made a cake!’ It was the best running experience ever!!! Do not look further, book your running experience with Oriol!",
+  rating: 4,
+  booking_id: booking20.id)
+
+#-------------------------------------------------------------------------------
+
+#Sunrise Beach Yoga
+
+group21 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act16.id)
+
+booking21 = Booking.create(
+  group_id: group21.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Great for Man",
+  content: "It was a lovely way to meet people from all over the world, i was a total beginner but the teacher helped me a lot, thanks to everyone. Man dont be afraid of doing yoga",
+  rating: 4,
+  booking_id: booking21.id)
+
+#-------------------------------------------------------------------------------
+
+#Yoga By The Sea
+
+group22 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act17.id)
+
+booking22 = Booking.create(
+  group_id: group22.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+Review.create(
+  title: "Great class",
+  content: "This is a must if you are in Barcelona, Macarena was amazing instructor and i cant say enough great things about this experience. The highlight of my trip!",
+  rating: 4,
+  booking_id: booking22.id)
+
+#-------------------------------------------------------------------------------
+
+#Art and Wine: Paint and sip in Barcelona
+
+group23 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act18.id)
+
+booking23 = Booking.create(
+  group_id: group23.id,
+  user_id: 2,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 5)
+
+Review.create(
+  title: "Great experience",
+  content: "I do not recommend this activity. The vine is not special and the place was packed with too many people. There are better alternatives for this in Barcelona",
+  rating: 2,
+  booking_id: booking23.id)
+
+#-------------------------------------------------------------------------------
+#BOOKINGS IN THE PAST WITH USER-ID: 10 TO SHOWCASE IN THE PRESENTATION
+
+group24 = Group.create(date: DateTime.new(2019,12,12,11,30,00), activity_id: act1.id)
+
+booking24 = Booking.create(
+  group_id: group24.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+group25 = Group.create(date: DateTime.new(2019,11,15,11,30,00), activity_id: act8.id)
+
+booking25 = Booking.create(
+  group_id: group25.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 15)
+
+group26 = Group.create(date: DateTime.new(2019,10,24,15,30,00), activity_id: act13.id)
+
+booking26 = Booking.create(
+  group_id: group26.id,
+  user_id: 10,
+  paid_status: true,
+  checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
+  quantity: 10)
+
+
+#-------------------------------------------------------------------------------
+#FUTURE GROUPS
 
 
 Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act1.id)
@@ -316,21 +744,81 @@ Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act2.id)
 Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act2.id)
 Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act2.id)
 
+Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,25,15,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,25,18,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,26,11,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,26,15,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,26,18,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,27,11,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,27,15,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,27,18,30,00), activity_id: act3.id)
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act3.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act3.id)
 Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act3.id)
+Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act3.id)
 
+Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,25,15,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,25,18,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,26,11,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,26,15,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,26,18,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,27,11,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,27,15,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,27,18,30,00), activity_id: act4.id)
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act4.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act4.id)
 Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act4.id)
+Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act4.id)
 
+Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,25,15,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,25,18,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,26,11,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,26,15,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,26,18,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,27,11,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,27,15,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,27,18,30,00), activity_id: act5.id)
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act5.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act5.id)
 Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act5.id)
+Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act5.id)
 
+Group.create(date: DateTime.new(2019,12,24,11,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,25,11,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,25,15,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,25,18,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,26,11,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,26,15,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,26,18,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,27,11,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,27,15,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,27,18,30,00), activity_id: act6.id)
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act6.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act6.id)
 Group.create(date: DateTime.new(2019,12,28,18,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,29,11,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,29,15,30,00), activity_id: act6.id)
+Group.create(date: DateTime.new(2019,12,29,18,30,00), activity_id: act6.id)
 
 Group.create(date: DateTime.new(2019,12,28,11,30,00), activity_id: act7.id)
 Group.create(date: DateTime.new(2019,12,28,15,30,00), activity_id: act7.id)
