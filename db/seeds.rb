@@ -6,6 +6,7 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 
+Review.delete_all
 Booking.delete_all
 Group.delete_all
 Activity.delete_all
@@ -248,14 +249,12 @@ act18 = Activity.create(
 puts "Activities : "
 puts Activity.count
 
-Group.delete_all
 
 #-------------------------------------------------------------------------------
 
 #SAGRADA
 
 group1 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act1.id)
-
 booking1 = Booking.create(
   group_id: group1.id,
   user_id: 2,
@@ -271,7 +270,6 @@ Review.create(
 
 
 group2 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act1.id)
-
 booking2 = Booking.create(
   group_id: group2.id,
   user_id: 2,
@@ -707,6 +705,7 @@ booking26 = Booking.create(
 
 #-------------------------------------------------------------------------------
 #FUTURE GROUPS
+
 
 Group.create(date: DateTime.new(2019,12,24,15,30,00), activity_id: act1.id)
 Group.create(date: DateTime.new(2019,12,24,18,30,00), activity_id: act1.id)

@@ -1,10 +1,10 @@
 <div class="checkout-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @booking.group.activity.photo_url %>);">
-You joined a new group!
+Details
 </div>
 <br>
 <div class="container">
   <div>
-    <p>Congrats <% @booking.user.name %>! You booked <strong> <%= @booking.group.activity.title %></strong>!
+    <p>Here are the details of <strong><%= @booking.group.activity.title %></strong>!
     <br>
     <br>
     <div class="group-description">
@@ -34,8 +34,8 @@ You joined a new group!
 
     <br>
     <% if @booking.group.completed == false %></p>
-      <p class="info-activity-completed">The activity is not confirmed yet, still <%= @booking.group.spots %> people need to join the activity!</p>
-      <p class="info-activity-completed">You will be able to check the updates after payment in your profile - My groups.</p>
+      <p class="info-activity-completed">Your group is not confirmed yet, after your payment, still <%= @booking.group.spots - @booking.quantity %> people will need to join! Check the updates in your profile - My groups.</p>
+      <p class="info-activity-completed">You'll be fully refunded if your group is not complete after the deadline.</p>
     <% else %>
       The group is full! The activity is confirmed
     <% end %>

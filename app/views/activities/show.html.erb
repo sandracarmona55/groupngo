@@ -7,43 +7,79 @@
 
   <div class="container">
 
-  <br>
-
-  <div id="description" class="tabcontent">
-    <div class="show-title">
-      <%= @activity.title %>
-    </div>
-
     <br>
 
-    <div class="about">
-      <div class="about-and-price">
-        <h3 id="show-subtitle-about">About</h3>
-        <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money(@activity.price) %>€ </p>
+    <div id="description" class="tabcontent">
+      <div class="show-title">
+        <%= @activity.title %>
       </div>
-      <p> <%= @activity.description %> </p>
-    </div>
 
-    <br>
+      <br>
 
-    <div class="map">
-      <h3 class="show-subtitle">Map</h3>
-      <p> <%= @activity.address %> </p>
-      <div
-        id="map"
-        style="width: 100%;
-        height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-    </div>
+      <div class="about">
+        <div class="about-and-price">
+          <h3 id="show-subtitle-about">About</h3>
+          <p class="price-show"> <i class="fas fa-coins symbol color-coin"></i> <%= humanized_money(@activity.price) %>€ </p>
+        </div>
+        <p style="margin-top: 10px;"> <%= @activity.description %> </p>
+      </div>
 
-    <br>
+      <br>
 
-    <div class="reviews">
-      <h3 class="show-subtitle">Reviews</h3>
+      <div class="map">
+        <h3 class="show-subtitle">Map</h3>
+        <p> <%= @activity.address %> </p>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+
+      <br>
+
       <div class="reviews">
-        <% @activity.reviews.each do |review| %>
+        <% if @activity.reviews.count.positive? %>
+          <div class="reviews-show d-flex align-items-center justify-content-between"  style="margin-bottom: 25px;">
+            <h2 class="show-subtitle-review">Reviews</h3>
+            <div>
+              <% if @activity.average_reviews == 5 %>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              <% elsif @activity.average_reviews == 4 %>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              <% elsif @activity.average_reviews == 3 %>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+              <% elsif @activity.average_reviews == 2 %>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+              <% elsif @activity.average_reviews == 1 %>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="reviews">
+            <% @activity.reviews.each do |review| %>
               <div class="review-content">
                 <h8 class="reviewtitle"><%= review.title %></h8>
                 <p><% if review.rating == 5 %>
@@ -80,7 +116,11 @@
                 <p class="reviewcontent"><%= review.content %></p>
               </div>
             <% end %>
-        </div>
+          </div>
+        <% else %>
+          <h3 class="show-subtitle">Reviews</h3>
+          <p style="font-weight: lighter;"> This activity doesn't have any reviews</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -160,12 +200,16 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="col-auto my-1">
-                  <label class="mr-sm-2" for="inlineFormCustomSelect">How many people are you?</label>
-
-                      <%= b.select :quantity, [1, 2, 3, 4, 5, 6]%>
-
+                <div class="actions text-center">
+                  <a class="incrementer minus" data-offset="-1">-</a>
+                  <span id="counter" data-count="1">1</span>
+                  <input type="hidden" id="quantity-input" name="booking[quantity]" value="1">
+                  <a class="incrementer" data-offset="1">+</a>
                 </div>
+
+<!--                 <div class="col-auto my-1">
+                  <label class="mr-sm-2" for="inlineFormCustomSelect">How many people are you?</label>
+                </div> -->
               </div>
               <div class="modal-footer">
                 <!-- <button type="button" data-dismiss="modal">Close</button> -->
@@ -178,6 +222,35 @@
       <%#= b.submit "Join this group!", class:"join-group", id:"join-btn", disabled: true %>
     <% end %>
   </div>
+
 </div>
+<script>
+  if (document.querySelectorAll('.incrementer')){
+    const updateCounter = (counter, count) => {
+      const quantity = document.getElementById('quantity-input');
+      quantity.value = count
+      counter.dataset.count = count;
+      counter.innerText = count;
+    };
+
+    const updateForm = (event) => {
+      const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
+      const counter = document.getElementById('counter');
+      const count = Number.parseInt(counter.dataset.count, 10) + offset;
+      if (count >= 1 && count <= <%= @activity.min_number %>) { {}
+        updateCounter(counter, count);
+      } else {
+        event.preventDefault();
+      }
+    };
+
+    const updateFormOnButtonClick = (button) => {
+      button.addEventListener('click', updateForm);
+    };
+
+    const buttons = document.querySelectorAll('.incrementer');
+    buttons.forEach(updateFormOnButtonClick);
+  };
+</script>
 
 

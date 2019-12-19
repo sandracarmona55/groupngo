@@ -87,10 +87,8 @@ My groups
           </div>
           <div class="col-10 group-infos">
             <div class="group-title"><%=booking.group.activity.title%></div>
-            <div class="hour-price d-flex justify-content-between">
-              <div><%= booking.group.date.strftime("%H:%M")  %></div>
-              <div class="group-new-price"><strong><%= booking.quantity %> x <%= humanized_money(booking.group.activity.price) %>€</strong></div>
-            </div>
+
+            <div class="link-review"><%= link_to "Leave a review", new_booking_review_path(booking) %> </div>
           </div>
         </div>
       <% end %>
