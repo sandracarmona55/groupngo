@@ -257,7 +257,7 @@ puts Activity.count
 group1 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act1.id)
 booking1 = Booking.create(
   group_id: group1.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -272,7 +272,7 @@ Review.create(
 group2 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act1.id)
 booking2 = Booking.create(
   group_id: group2.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
   quantity: 10)
@@ -288,7 +288,7 @@ group3 = Group.create(date: DateTime.new(2019,11,27,15,30,00), activity_id: act1
 
 booking3 = Booking.create(
   group_id: group3.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -308,7 +308,7 @@ group4 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act2
 
 booking4 = Booking.create(
   group_id: group4.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 15)
@@ -324,7 +324,7 @@ group5 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act2
 
 booking5 = Booking.create(
   group_id: group5.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
   quantity: 15)
@@ -340,7 +340,7 @@ group6 = Group.create(date: DateTime.new(2019,11,27,15,30,00), activity_id: act2
 
 booking6 = Booking.create(
   group_id: group6.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 15)
@@ -360,7 +360,7 @@ group7 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act3
 
 booking7 = Booking.create(
   group_id: group7.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -376,7 +376,7 @@ group8 = Group.create(date: DateTime.new(2019,11,25,11,30,00), activity_id: act3
 
 booking8 = Booking.create(
   group_id: group8.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit7",
   quantity: 10)
@@ -395,7 +395,7 @@ group9 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act4
 
 booking9 = Booking.create(
   group_id: group9.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 15)
@@ -414,7 +414,7 @@ group10 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking10 = Booking.create(
   group_id: group10.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 8)
@@ -433,7 +433,7 @@ group11 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking11 = Booking.create(
   group_id: group11.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -452,7 +452,7 @@ group12 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking12 = Booking.create(
   group_id: group12.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -471,7 +471,7 @@ group13 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking13 = Booking.create(
   group_id: group13.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 15)
@@ -490,7 +490,7 @@ group14 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking14 = Booking.create(
   group_id: group14.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -509,7 +509,7 @@ group15 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking15 = Booking.create(
   group_id: group15.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -528,7 +528,7 @@ group16 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking16 = Booking.create(
   group_id: group16.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -547,7 +547,7 @@ group17 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking17 = Booking.create(
   group_id: group17.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -566,7 +566,7 @@ group18 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking18 = Booking.create(
   group_id: group18.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -585,7 +585,7 @@ group19 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking19 = Booking.create(
   group_id: group19.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 5)
@@ -604,7 +604,7 @@ group20 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking20 = Booking.create(
   group_id: group20.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 5)
@@ -623,7 +623,7 @@ group21 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking21 = Booking.create(
   group_id: group21.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -642,7 +642,7 @@ group22 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking22 = Booking.create(
   group_id: group22.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 10)
@@ -661,7 +661,7 @@ group23 = Group.create(date: DateTime.new(2019,11,24,11,30,00), activity_id: act
 
 booking23 = Booking.create(
   group_id: group23.id,
-  user_id: 2,
+  user_id: 1,
   paid_status: true,
   checkout_session_id: "cs_test_aMRAAu1Nr2Zqv8xGyspmGwzde3D6aH6h1wa3Kn2hHms44x2lSKwwcit6",
   quantity: 5)
